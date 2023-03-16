@@ -8,17 +8,17 @@
 We used figma for our wireframe to design website layout and planned out associations and models on a ERD. Listed below:
 
 Figma
-![Example screenshot](./src/Images/ERD.png)
+![Example screenshot](./Images/ERD.png)
 
 Trello
-![Example screenshot](./src/Images/Trelloshot1.png)
-![Example screenshot](./src/Images/Trelloshot2.png)
+![Example screenshot](./Images/Trelloshot1.png)
+![Example screenshot](./Images/Trelloshot2.png)
 
 Component Heirarchy
-![Example screenshot](./src/Images/flowchart.png)
+![Example screenshot](./Images/flowchart.png)
 
 ERD of Models and Assoc.
-![Example screenshot](./src/Images/ERD.png)
+![Example screenshot](./Images/ERD.png)
 
 ## Installation
 
