@@ -1,3 +1,5 @@
+![](https://media0.giphy.com/media/SUcnmocyRKkfSil9xd/giphy.gif?cid=29caca7542y3l4lv7ydufxxo0ser78rk2xulwcfp5i0ya34p&rid=giphy.gif&ct=g)
+
 # <Simple-Steam>
 
 ## Description
@@ -18,7 +20,7 @@ We used figma for our wireframe to design website layout and planned out associa
 ![Example screenshot](./Images/flowchart.png)
 
 [Models & Associations](https://drive.google.com/file/d/1hKJR3raH_j_YbcrahY0dtTSxKKbwjMqw/view?usp=sharing)
-![Example screenshot](./Images/ERD.png)
+![Example screenshot](./Images/ERDmodelsandassoc.png)
 
 ## Installation
 
