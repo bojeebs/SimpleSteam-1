@@ -8,18 +8,21 @@
 We used figma for our wireframe to design website layout and planned out associations and models on a ERD. Listed below:
 
 [Figma](https://www.figma.com/file/GJcglGgbjQxmLAuQeQYUhN/Component-Heirarchy?node-id=0%3A1&t=3fR5PiBGsENvhGuf-1)
-
+![Example screenshot](./src/Images/ERD.png)
 
 [Trello](https://trello.com/b/uKDXxQbk/simplesteam)
+![Example screenshot](./src/Images/Trelloshot1.png)
+![Example screenshot](./src/Images/Trelloshot2.png)
 
 [Component Heirarchy](https://www.figma.com/file/GJcglGgbjQxmLAuQeQYUhN/Component-Heirarchy?node-id=0%3A1&t=3fR5PiBGsENvhGuf-1)
+![Example screenshot](./src/Images/flowchart.png)
 
 [ERD of Models and Assoc.](https://drive.google.com/file/d/1hKJR3raH_j_YbcrahY0dtTSxKKbwjMqw/view?usp=sharing)
-![Example screenshot](./src/Image/ScreenShot.png)
+![Example screenshot](./src/Images/ERD.png)
 
 ## Installation
 
-Installation includes front-end and back-end libraries and dependencies listed below.
+Installation includes front-end and back-end libraries and dependencies listed below. More details are on the Trello planner. 
 
 React:
 ```
@@ -39,7 +42,7 @@ npm run dev
  
 ## Usage
 
-A user would go to the login page to create an account. From there a user could choose games from any category or genre to add to their wishlist as a to buy or play later… 
+A user would go to the login page to create an account. From there, a user could choose games from any category or genre to add to their wishlist as a to buy or play later… 
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
