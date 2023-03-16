@@ -7,17 +7,17 @@
 ## Planning
 We used figma for our wireframe to design website layout and planned out associations and models on a ERD. Listed below:
 
-[Figma](https://www.figma.com/file/GJcglGgbjQxmLAuQeQYUhN/Component-Heirarchy?node-id=0%3A1&t=3fR5PiBGsENvhGuf-1)
+Figma
 ![Example screenshot](./src/Images/ERD.png)
 
-[Trello](https://trello.com/b/uKDXxQbk/simplesteam)
+Trello
 ![Example screenshot](./src/Images/Trelloshot1.png)
 ![Example screenshot](./src/Images/Trelloshot2.png)
 
-[Component Heirarchy](https://www.figma.com/file/GJcglGgbjQxmLAuQeQYUhN/Component-Heirarchy?node-id=0%3A1&t=3fR5PiBGsENvhGuf-1)
+Component Heirarchy
 ![Example screenshot](./src/Images/flowchart.png)
 
-[ERD of Models and Assoc.](https://drive.google.com/file/d/1hKJR3raH_j_YbcrahY0dtTSxKKbwjMqw/view?usp=sharing)
+ERD of Models and Assoc.
 ![Example screenshot](./src/Images/ERD.png)
 
 ## Installation
