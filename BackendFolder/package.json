@@ -1,0 +1,24 @@
+{
+  "name": "simplesteam-1",
+  "version": "1.0.0",
+  "description": "![](https://media0.giphy.com/media/SUcnmocyRKkfSil9xd/giphy.gif?cid=29caca7542y3l4lv7ydufxxo0ser78rk2xulwcfp5i0ya34p&rid=giphy.gif&ct=g)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bojeebs/SimpleSteam-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bojeebs/SimpleSteam-1/issues"
+  },
+  "homepage": "https://github.com/bojeebs/SimpleSteam-1#readme",
+  "dependencies": {
+    "pg": "^8.10.0",
+    "sequelize": "^6.29.3"
+  }
+}
