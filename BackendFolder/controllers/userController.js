@@ -33,6 +33,21 @@ const DeleteUser = async(req, res) => {
   }
  }
 
+ const UpdateUser = async(req,res) => {
+  try {
+    let ownerId = await Users.update(
+      {...req.body },
+      { where:{ id: req.params.user_id }, returning: true }
+    )
+    res.send(ownerId)
+    } catch (error) {
+      throw error
+    }
+  } 
+  
+  
+ 
+
 
 
 
@@ -46,7 +61,7 @@ module.exports = {
 GetUsers,
 CreateUser,
 DeleteUser,
-
+UpdateUser,
 
 
 
