@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE',
       onUpdate: 'CASCADE',
       references: {
-        model: 'users',
+        model: 'games',
         key: 'id'
       }
     }
