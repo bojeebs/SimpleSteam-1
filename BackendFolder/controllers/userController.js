@@ -1,0 +1,53 @@
+const { Users } = require('../models')
+
+
+const GetUsers = async (req, res) => {
+  try {
+    const users = await Users.findAll()
+    res.send(users)
+  } catch (error) {
+    throw error
+  }
+}
+
+ const CreateUser = async (req, res) => {
+  try {
+    let userBody = {
+      ...req.body
+  }
+  let user = await Users.create(userBody)
+  res.send(user)
+ } catch (error) {
+   throw error
+ }
+}
+
+
+const DeleteUser = async(req, res) => {
+  try {
+    let ownerId = parseInt(req.params.user_id)
+    await Users.destroy({ where: { id: ownerId}})
+    res.send(`deleted user id ${ownerId}`)
+  } catch (error) {
+    throw error
+  }
+ }
+
+
+
+
+
+
+
+
+
+
+module.exports = {
+GetUsers,
+CreateUser,
+DeleteUser,
+
+
+
+
+}
