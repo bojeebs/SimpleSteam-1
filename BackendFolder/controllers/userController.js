@@ -10,17 +10,17 @@ const GetUsers = async (req, res) => {
   }
 }
 
- const CreateUser = async (req, res) => {
-  try {
-    let userBody = {
-      ...req.body
-  }
-  let user = await Users.create(userBody)
-  res.send(user)
- } catch (error) {
-   throw error
- }
-}
+//  const CreateUser = async (req, res) => {
+//   try {
+//     let userBody = {
+//       ...req.body
+//   }
+//   let user = await Users.create(userBody)
+//   res.send(user)
+//  } catch (error) {
+//    throw error
+//  }
+// }
 
 
 const DeleteUser = async(req, res) => {
@@ -34,17 +34,17 @@ const DeleteUser = async(req, res) => {
   }
 }
 
- const UpdateUser = async(req,res) => {
-  try {
-    let ownerId = await Users.update(
-      {...req.body },
-      { where:{ id: req.params.user_id }, returning: true }
-    )
-    res.send(ownerId)
-    } catch (error) {
-      throw error
-    }
-  } 
+//  const UpdateUser = async(req,res) => {
+//   try {
+//     let ownerId = await Users.update(
+//       {...req.body },
+//       { where:{ id: req.params.user_id }, returning: true }
+//     )
+//     res.send(ownerId)
+//     } catch (error) {
+//       throw error
+//     }
+//   } 
   
  
 
@@ -59,9 +59,9 @@ const DeleteUser = async(req, res) => {
 
 module.exports = {
 GetUsers,
-CreateUser,
+//CreateUser,
 DeleteUser,
-UpdateUser,
+//UpdateUser,
 
 
 
