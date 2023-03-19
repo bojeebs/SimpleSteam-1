@@ -60,7 +60,7 @@ const CreateWishlist = async (req, res) => {
       throw error
     }
   };
-//TODO: Delete game from wishlist, search for games in game controller via search,
+//TODO:  search for games in game controller via search,
 //TODO: add games to wishlist in game controller Middleware
 
 
