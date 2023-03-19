@@ -1,4 +1,4 @@
-const { Users } = require('../models')
+const { Users, Wishlist } = require('../models')
 
 
 const GetUsers = async (req, res) => {
@@ -26,7 +26,8 @@ const GetUsers = async (req, res) => {
 const DeleteUser = async(req, res) => {
   try {
     let ownerId = parseInt(req.params.user_id)
-    await Users.destroy({ where: { id: ownerId}, cascade: true })
+    await Users.destroy({ where: { id: ownerId }, cascade: true })
+    await Wishlist.destroy({ where: { userId: ownerId } })
     res.send(`deleted user id ${ownerId} and their wishlist`)
   } catch (error) {
     throw error

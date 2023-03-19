@@ -1,10 +1,9 @@
 const Router = require('express').Router()
-const {  } = require ('../controllers/gameController')
+const { GetGames, AddGames, AddGameWishlist } = require ('../controllers/gameController')
 
 
-Router.get('/wishlist/games', )
+Router.get('/games', GetGames )
+Router.post('/gamesadd', AddGames )
+Router.post('/game/:game_id', AddGameWishlist)
 
-
-module.exports = {
-
-}
+module.exports = Router
