@@ -1,6 +1,6 @@
-// import { useState } from 'react'
-// // import { SignInUser } from '../services/Auth'
-// import { useNavigate } from 'react-router-dom'
+ import { useState } from 'react'
+ import { LoginUser } from '../services/Auth'
+ import { useNavigate } from 'react-router-dom'
 import Header from '../Components/Header'
 
 
@@ -17,7 +17,7 @@ const Login = (props) => {
   
     const handleSubmit = async (e) => {
       e.preventDefault()
-       const payload = await LogInUser(formValues)
+       const payload = await LoginUser(formValues)
     
       setFormValues({ email: '', password: '' })
      
@@ -25,10 +25,13 @@ const Login = (props) => {
 
        props.toggleAuthenticated(true)
       
-      navigate('/main')
+      navigate('/Home')
     }
   
     return (
+      <div classname="login-header-container">
+          <h1>Login</h1>
+        <Header/>
       <div className="signin col">
         <div className="card-overlay centered">
           <form className="col" onSubmit={handleSubmit}>
@@ -57,6 +60,7 @@ const Login = (props) => {
               Sign In
             </button>
           </form>
+        </div>
         </div>
       </div>
     )

@@ -5,7 +5,7 @@ export default function Main () {
         <div>
             <header className="main=container">
                 <h1>Simple Steam</h1>
-            <Header />
+
             </header>
         </div>
     )
