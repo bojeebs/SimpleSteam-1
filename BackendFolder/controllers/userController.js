@@ -26,12 +26,12 @@ const GetUsers = async (req, res) => {
 const DeleteUser = async(req, res) => {
   try {
     let ownerId = parseInt(req.params.user_id)
-    await Users.destroy({ where: { id: ownerId}})
-    res.send(`deleted user id ${ownerId}`)
+    await Users.destroy({ where: { id: ownerId}, cascade: true })
+    res.send(`deleted user id ${ownerId} and their wishlist`)
   } catch (error) {
     throw error
   }
- }
+}
 
  const UpdateUser = async(req,res) => {
   try {
@@ -44,7 +44,6 @@ const DeleteUser = async(req, res) => {
       throw error
     }
   } 
-  
   
  
 
