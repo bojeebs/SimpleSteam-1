@@ -1,6 +1,8 @@
 'use strict';
+const { DataTypes } = require('sequelize');
 const {
-  Model
+  Model,
+  
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Games extends Model {
@@ -10,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Games.belongsTo(models.Wishlist, {foreignKey: 'gamesId'})
+      Games.belongsToMany(models.Wishlist, { through: 'Wishlist', foreignKey: 'id'})
     }
   }
   Games.init({

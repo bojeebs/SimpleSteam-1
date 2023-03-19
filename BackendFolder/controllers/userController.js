@@ -1,4 +1,4 @@
-const { Users } = require('../models')
+const { Users, Wishlist } = require('../models')
 
 
 const GetUsers = async (req, res) => {
@@ -26,12 +26,27 @@ const GetUsers = async (req, res) => {
 const DeleteUser = async(req, res) => {
   try {
     let ownerId = parseInt(req.params.user_id)
-    await Users.destroy({ where: { id: ownerId}})
-    res.send(`deleted user id ${ownerId}`)
+    await Users.destroy({ where: { id: ownerId }, cascade: true })
+    await Wishlist.destroy({ where: { userId: ownerId } })
+    res.send(`deleted user id ${ownerId} and their wishlist`)
   } catch (error) {
     throw error
   }
- }
+}
+
+ const UpdateUser = async(req,res) => {
+  try {
+    let ownerId = await Users.update(
+      {...req.body },
+      { where:{ id: req.params.user_id }, returning: true }
+    )
+    res.send(ownerId)
+    } catch (error) {
+      throw error
+    }
+  } 
+  
+ 
 
 
 
@@ -46,7 +61,7 @@ module.exports = {
 GetUsers,
 CreateUser,
 DeleteUser,
-
+UpdateUser,
 
 
 

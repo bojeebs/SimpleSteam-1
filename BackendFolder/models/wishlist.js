@@ -1,6 +1,8 @@
 'use strict';
+const { DataTypes } = require('sequelize');
 const {
-  Model
+  Model,
+  
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Wishlist extends Model {
@@ -11,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Wishlist.belongsTo(models.Users, {foreignKey: 'userId'})
-      Wishlist.hasMany(models.Games, {foreignKey: 'gamesId'})
+      Wishlist.belongsToMany(models.Games, { through: 'Wishlist', foreignKey: 'gamesId'})
     }
   }
   Wishlist.init({
