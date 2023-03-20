@@ -2,7 +2,8 @@
  import { LoginUser } from '../services/Auth'
  import { useNavigate } from 'react-router-dom'
 
-import {Link} from 'react-router-dom'
+
+ import {Link} from 'react-router-dom'
 
 
 
@@ -30,7 +31,7 @@ const Login = (props) => {
     }
   
     return (
-      <div classname="login-container">
+      <div className="login-container">
           
           <div>
             <h1>Login</h1>
@@ -64,7 +65,7 @@ const Login = (props) => {
               Sign In
             </button>
             <footer>
-              <h4>Don't have an account? <Link href= "http://localhost:3000/register">Join SimpleSteam</Link> </h4>
+              <h4>Don't have an account? <Link to="/register">Join SimpleSteam</Link> </h4>
             </footer>
           </form>
           
@@ -78,9 +79,14 @@ const Login = (props) => {
 
 
 
+
+
+
+  
+
  
 // function App() {
-//   const [name, setName] = useState('');
+//   const [userName, setUserName] = useState('');
 //   const [email, setEmail] = useState('');
 //   const [password, setPassword] = useState('');
 //   const [isLoggedin, setIsLoggedin] = useState(false);
@@ -90,14 +96,14 @@ const Login = (props) => {
 //     console.log(userName, email, password);
 //     const userData = {
 //       userName,
-//       email,
 //       password,
+//       email,
 //     };
 //     localStorage.setItem('token-info', JSON.stringify(userData));
 //     setIsLoggedin(true);
 //     setUsername('');
-//     setEmail('');
 //     setPassword('');
+//     setEmail('');
 //   };
  
 //   const logout = () => {
@@ -119,20 +125,24 @@ const Login = (props) => {
 //                 placeholder="Username"
 //               />
 //               <input
-//                 type="email"
-//                 onChange={(e) => setEmail(e.target.value)}
-//                 value={email}
-//                 placeholder="Email"
-//               />
-//               <input
 //                 type="password"
 //                 onChange={(e) => setPassword(e.target.value)}
 //                 value={password}
 //                 placeholder="Password"
 //               />
+//               <input
+//                 type="email"
+//                 onChange={(e) => setEmail(e.target.value)}
+//                 value={email}
+//                 placeholder="Email"
+//               />
 //               <button type="submit" onClick={login}>
 //                 GO
 //               </button>
+//              <footer>
+//          <h4>Don't have an account? 
+//          <Link to="/register">Join SimpleSteam</Link> </h4>
+//            </footer>
 //             </form>
 //           </>
 //         ) : (

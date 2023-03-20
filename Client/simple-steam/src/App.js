@@ -5,6 +5,7 @@
  import Login from './Pages/Login';
  import Wishlist from './Pages/Wishlist';
  import Header from './Components/Header';
+ import Register from './Pages/Register'
  import './styles/App.css'
  import { CheckSession } from './services/Auth'
  import Games from './Pages/Games'
@@ -32,16 +33,12 @@ function App() {
     setUser(user)
     toggleAuthenticated(true)
   }
-  const handleLogOut = () => {
-    //Reset all auth related state and clear localStorage
-    setUser(null)
-    toggleAuthenticated(false)
-    localStorage.clear()
-  }
-
-
-
-
+  // const handleLogOut = () => {
+  //   //Reset all auth related state and clear localStorage
+  //   setUser(null)
+  //   toggleAuthenticated(false)
+  //   localStorage.clear()
+  // }
 
 
   return (
@@ -58,11 +55,12 @@ function App() {
         path="/Login"
         element={
           <div>
+             <Header />
                 <Login
             setUser={setUser}
   toggleAuthenticated={toggleAuthenticated}
           />
-            <Header />
+            
           </div>
         }/>
          <Route
@@ -75,6 +73,12 @@ function App() {
         element={
             <Games user={user} authenticated={authenticated}/>
         }/>
+        <Route path="/register" 
+        element={
+        <div>
+          <Header/>
+          <Register/>
+        </div>} />
       </Routes>
     </div>
   );
