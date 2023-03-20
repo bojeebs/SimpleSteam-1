@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom'
 
 export default function Nav(){
     return (
+        <div className='nav-container'>
 <nav className='navbar'>
-      <Link to="/">Home</Link>
-      <Link to="/profile">Profile</Link>
-      <Link to="/games">Games</Link>
-      <Link to="/wishlist">Wishlist</Link>
+      <Link className='links' to="/">Home</Link>
+      <Link className='links' to="/profile">Profile</Link>
+      <Link className='links' to="/games">Games</Link>
+      <Link className='links' to="/wishlist">Wishlist</Link>
     </nav>
+    </div>
 
     )
 }
