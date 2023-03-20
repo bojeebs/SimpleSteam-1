@@ -10,6 +10,14 @@ export default function Nav(){
       <Link className='links' to="/profile">Profile</Link>
       <Link className='links' to="/games">Games</Link>
       <Link className='links' to="/wishlist">Wishlist</Link>
+      <div className='search'>
+      <input
+        className='searchbar'  
+        type='text'
+        placeholder='Search'
+       />
+       <button type='submit'>Find</button> 
+       </div>
     </nav>
     </div>
 
