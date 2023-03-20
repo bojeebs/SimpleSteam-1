@@ -7,6 +7,7 @@
  import Header from './Components/Header';
  import './styles/App.css'
  import { CheckSession } from './services/Auth'
+ import Games from './Pages/Games'
 
 
  
@@ -68,6 +69,11 @@ function App() {
         path="/wishlist"
         element={
             <Wishlist user={user} authenticated={authenticated}/>
+        }/>
+        <Route
+        path="/games"
+        element={
+            <Games user={user} authenticated={authenticated}/>
         }/>
       </Routes>
     </div>
