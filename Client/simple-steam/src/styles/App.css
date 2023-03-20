@@ -7,6 +7,9 @@ body {
   justify-content: space-around;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  background-color: #237EA5;
+  padding: 2%;
+
 }
 
 .links {
@@ -24,7 +27,9 @@ body {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
   padding: 20px;
   margin: 0 auto;
-  background-color: #237EA5;
+  background-color: #203152;
+  width: 75%;
+  bottom: 25%
 }
 
 .main-container {
@@ -40,9 +45,9 @@ body {
 }
 
 .steamlogo {
-  width: 20%;
-  height: 20%;
-  border-radius: 60%;
+  width: 10%;
+  height: 10%;
+  border-radius: 40%;
 }
 
 .header-card {
@@ -63,8 +68,12 @@ border-radius: 100px;
 background-color: #296693;
 color: #33CFA8;
 padding: .5%;
+width: 8%;
 }
 
+.searchbar {
+  background-color: #498BD9;
+}
 
 
 
