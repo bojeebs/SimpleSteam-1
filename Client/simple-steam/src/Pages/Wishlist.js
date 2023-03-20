@@ -1,4 +1,4 @@
-// import Nav from "./Nav";
+//import Nav from "./Nav";
 import { useEffect, useState } from 'react'
 import { GetUserWishlistGames, DeleteGames } from '../services/WishlistServices'
 import { useNavigate } from 'react-router-dom'
@@ -9,17 +9,22 @@ const Wishlist = ({ user, authenticated }) => {
   
   useEffect(() => {
     const handleGames = async () => {
-      const data = await GetUserWishlistGames(user)
+      const data = await GetUserWishlistGames(1)
       setGames(data)
     }
     handleGames()
   }, [])
+
+
+  
   
   return (
     <div className="grid col-4">
+      <h1>Test</h1>
       {games.map((game) => (
         <div className="card" key={game.id}>
           <h3>{game.title}</h3>
+         
             {console.log(game.title)}
         </div>
       ))}
