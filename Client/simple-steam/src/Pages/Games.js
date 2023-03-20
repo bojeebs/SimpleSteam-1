@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GetGames } from "../services/GameServices";
 
+
 const Games = ({ user, authenticated }) => {
   const [games, setGames] = useState([])
   let navigate = useNavigate()

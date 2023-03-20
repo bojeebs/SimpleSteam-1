@@ -1,7 +1,8 @@
  import { useState } from 'react'
  import { LoginUser } from '../services/Auth'
  import { useNavigate } from 'react-router-dom'
-import Header from '../Components/Header'
+
+import {Link} from 'react-router-dom'
 
 
 
@@ -9,17 +10,17 @@ import Header from '../Components/Header'
 const Login = (props) => {
     let navigate = useNavigate()
   
-    const [formValues, setFormValues] = useState({ email: '', password: '' })
+    const [formValues, setFormValues] = useState({ userName: '', password: '' })
   
     const handleChange = (e) => {
-      setFormValues({ ...formValues, [e.target.name]: e.target.value })
+      setFormValues({ ...formValues, [e.target.userName]: e.target.value })
     }
   
     const handleSubmit = async (e) => {
       e.preventDefault()
        const payload = await LoginUser(formValues)
     
-      setFormValues({ email: '', password: '' })
+      setFormValues({ userName: '', password: '' })
      
        props.setUser(payload)
 
@@ -29,19 +30,22 @@ const Login = (props) => {
     }
   
     return (
-      <div classname="login-header-container">
-          <h1>Login</h1>
-        <Header/>
+      <div classname="login-container">
+          
+          <div>
+            <h1>Login</h1>
+       </div>
+
       <div className="signin col">
         <div className="card-overlay centered">
           <form className="col" onSubmit={handleSubmit}>
             <div className="input-wrapper">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="username">Username</label>
               <input
                 onChange={handleChange}
-                name="email"
-                type="email"
-                placeholder="example@example.com"
+                name="username"
+                type="username"
+                placeholder="username"
                 value={formValues.email}
                 required
               />
@@ -56,10 +60,14 @@ const Login = (props) => {
                 required
               />
             </div>
-            <button disabled={!formValues.email || !formValues.password}>
+            <button disabled={!formValues.userName|| !formValues.password}>
               Sign In
             </button>
+            <footer>
+              <h4>Don't have an account? <Link href= "http://localhost:3000/register">Join SimpleSteam</Link> </h4>
+            </footer>
           </form>
+          
         </div>
         </div>
       </div>
@@ -70,8 +78,6 @@ const Login = (props) => {
 
 
 
-//   import { useState } from 'react';
-
  
 // function App() {
 //   const [name, setName] = useState('');
@@ -81,15 +87,15 @@ const Login = (props) => {
  
 //   const login = (e) => {
 //     e.preventDefault();
-//     console.log(name, email, password);
+//     console.log(userName, email, password);
 //     const userData = {
-//       name,
+//       userName,
 //       email,
 //       password,
 //     };
 //     localStorage.setItem('token-info', JSON.stringify(userData));
 //     setIsLoggedin(true);
-//     setName('');
+//     setUsername('');
 //     setEmail('');
 //     setPassword('');
 //   };
@@ -108,9 +114,9 @@ const Login = (props) => {
 //             <form action="">
 //               <input
 //                 type="text"
-//                 onChange={(e) => setName(e.target.value)}
+//                 onChange={(e) => setUsername(e.target.value)}
 //                 value={name}
-//                 placeholder="Name"
+//                 placeholder="Username"
 //               />
 //               <input
 //                 type="email"

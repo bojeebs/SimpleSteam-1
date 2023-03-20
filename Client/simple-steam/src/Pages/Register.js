@@ -6,7 +6,7 @@ const Register = () => {
   let navigate = useNavigate()
   const [formValues, setFormValues] = useState({
     email: '',
-    username: '',
+    userName: '',
     password: '',
     confirmPassword: ''
   })
