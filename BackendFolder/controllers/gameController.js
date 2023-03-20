@@ -25,12 +25,12 @@ const GetGames = async (req, res) => {
 
   const AddGameWishlist = async (req, res) => { // fix this maybe later?
     try {
-        const userId = req.user.id;
-        const gameId = req.params.game_id;
+        const { userId } = req.body;
+        const gamesId = req.params.game_id;
         
         const newWishlistItem = await Wishlist.create({
           userId: userId,
-          gameId: gameId
+          gamesId: gamesId
         });
     
         res.send(newWishlistItem);

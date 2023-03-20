@@ -1,5 +1,5 @@
 const { Users } = require('../models')
-const middleware = require('../middleware')
+const middleware = require('../Middleware/index.js')
 
 const Login = async (req, res) => {
   try {
@@ -9,7 +9,7 @@ const Login = async (req, res) => {
     })
     if (
       user &&
-      (await middleware.comparePassword(user.passwordDigest, req.body.password))
+      (await middleware.comparePassword(user.password, req.body.password))
     ) {
       let payload = {
         id: user.id,
@@ -28,7 +28,7 @@ const Register = async (req, res) => {
   try {
     const { username, email, password } = req.body
     let passwordDigest = await middleware.hashPassword(password)
-    const user = await Users.create({ username, email, passwordDigest })
+    const user = await Users.create({ username, email, password: passwordDigest })
     res.send(user)
   } catch (error) {
     throw error
