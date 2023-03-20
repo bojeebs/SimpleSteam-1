@@ -13,9 +13,9 @@ Router.post('/wishlist/get',
     middleware.verifyToken,
     CreateWishlist
  )
-Router.get('/wishlist',
-    // middleware.stripToken,
-    // middleware.verifyToken,
+Router.get('/wishlist/:userId',
+    //middleware.stripToken,
+   // middleware.verifyToken,
     GetUserWishlistGames
  )
 Router.delete('/wishlist',
