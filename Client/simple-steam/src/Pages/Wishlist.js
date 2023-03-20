@@ -1,15 +1,19 @@
 //import Nav from "./Nav";
 import { useEffect, useState } from 'react'
 import { GetUserWishlistGames, DeleteGames } from '../services/WishlistServices'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+
 
 const Wishlist = ({ user, authenticated }) => {
   const [games, setGames] = useState([])
   let navigate = useNavigate()
-  
+  const { userId } = useParams()
+
+
+
   useEffect(() => {
     const handleGames = async () => {
-      const data = await GetUserWishlistGames(1)
+      const data = await GetUserWishlistGames(userId)
       setGames(data)
     }
     handleGames()
