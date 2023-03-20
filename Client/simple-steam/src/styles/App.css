@@ -51,10 +51,11 @@ body {
 }
 
 .header-card {
+  display: flex;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
-  padding: 20px;
+  padding: 5px;
   border-radius: 80px;
-  width: 25%;
+  width: 15%;
   margin: 0 auto;
   background-color: #169DA6;
 }
@@ -69,6 +70,7 @@ background-color: #296693;
 color: #33CFA8;
 padding: .5%;
 width: 8%;
+cursor: pointer;
 }
 
 .searchbar {

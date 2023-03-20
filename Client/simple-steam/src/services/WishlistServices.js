@@ -2,7 +2,7 @@ import Client from './api'
 
 export const GetUserWishlistGames = async (userId) => {
   try {
-    const res = await Client.get('/api/wishlist',  { data: { id: 2 } })
+    const res = await Client.get(`/api/wishlist/${userId}`)
     return res.data
   } catch (error) {
     throw error
