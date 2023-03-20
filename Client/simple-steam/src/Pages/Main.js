@@ -1,9 +1,12 @@
 import Header from "../Components/Header";
+import { Link } from "react-router-dom";
 
 export default function Main() {
   return (
     <div className="main-container">
+        <Link to='/login'>
       <button className="login-button">Login</button>
+      </Link>
       <div className="header-card">
         <header className="header-container">
           <h1>
