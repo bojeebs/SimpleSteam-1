@@ -15,7 +15,7 @@
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-
+  
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -66,7 +66,7 @@ function App() {
           </div>
         }/>
          <Route
-        path="/wishlist"
+        path="/wishlist/:userId"
         element={
             <Wishlist user={user} authenticated={authenticated}/>
         }/>
