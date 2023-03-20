@@ -2,9 +2,10 @@ import Header from "../Components/Header"
 
 export default function Main () {
     return (
-        <div>
-            <header className="main=container">
-                <h1>Simple Steam</h1>
+        <div className="main-container">
+            <button className="login-button">Login</button>
+            <header className="header-container">
+                <h1>SimpleSteam</h1>
 
             </header>
         </div>
