@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { UpdateProfile } from '../services/Auth';
+import { useState } from 'react';
+import { UpdateProfile } from '../services/Auth'
 
 export default function Profile() {
   const { user, updateUserProfile } = useAuth();
