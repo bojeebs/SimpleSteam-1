@@ -17,3 +17,12 @@ export const notloggedInGetGames = async () => {
     throw error
   }
 }
+
+export const GameId  = async () => {
+  try {
+    const res = await Client.post('/api/gamesadd')
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

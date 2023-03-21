@@ -17,7 +17,7 @@ const GetGames = async (req, res) => {
         let gamesBody = {
           ...req.body
       }
-      let user = await Games.create(gamesBody)
+      let user = await Wishlist.create(gamesBody)
       res.send(user)
       console.log(user)
      } catch (error) {
