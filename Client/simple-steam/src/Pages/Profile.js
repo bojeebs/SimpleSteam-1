@@ -1,10 +1,44 @@
 import { useState } from 'react';
 import { UpdateProfile } from '../services/Auth'
 
+ import { useAuth, withAuth } from 'your-authentication-library';
+
 export default function Profile() {
   const { user, updateUserProfile } = useAuth();
 
+
  import { useAuth, withAuth } from 'your-authentication-library';
+
+
+
+//  export default function Profile() {
+// const { user, updateUserProfile } = useAuth();
+
+//  const [editingUsername, setEditingUsername] = useState(false);
+// const [editingPassword, setEditingPassword] = useState(false);
+// const [editingEmail, setEditingEmail] = useState(false);
+
+// const handleUpdateUsername = (newUsername) => {
+//  updateUserProfile({ displayName: newUsername })
+//  .then(() => setEditingUsername(false))
+//  .catch((error) => console.log(error));
+//   };
+
+//   const handleUpdatePassword = (newPassword) => {
+//    Send request to update password
+//    };
+
+
+//   const handleUpdateEmail = withAuth(async (newEmail) => {
+//     try {
+//       // Call the middleware function before calling the updateUserProfile function
+//       const updatedEmail = await middlewareFunction(newEmail);
+//       updateUserProfile({ email: updatedEmail });
+//       setEditingEmail(false);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   });
 
 
   const [editUsername, setEditUsername] = useState(false);
@@ -97,6 +131,7 @@ export default function Profile() {
 //       console.log(error);
 //     }
 //   });
+
 
 //   return (
 //     <div>

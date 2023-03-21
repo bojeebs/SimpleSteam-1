@@ -107,7 +107,7 @@ function App() {
         element={
           <div>
              <Header />
-            <Profile />
+            {/* <Profile /> */}
             
           </div>
         }/>
