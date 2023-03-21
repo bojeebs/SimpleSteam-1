@@ -16,10 +16,10 @@ Router.post('/gamesadd',
     middleware.verifyToken,
     AddGames 
 )
-Router.post('/game/:game_id',
-    middleware.stripToken,
-    middleware.verifyToken,
-    AddGameWishlist
- )
+// Router.post('/game/:game_id',
+//     middleware.stripToken,
+//     middleware.verifyToken,
+//     AddGameWishlist
+//  )
 
 module.exports = Router

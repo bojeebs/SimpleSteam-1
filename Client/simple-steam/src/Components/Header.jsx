@@ -1,7 +1,17 @@
 import Nav from "./Nav";
 import { Link } from "react-router-dom";
 
-export default function Header () {
+export default function Header ({ user, authenticated }) {
+
+  const Logout = () => {
+    localStorage.clear('id') // or localStorage.clear() 
+    localStorage.clear('token')
+  }
+
+
+
+ 
+
     return (
         <div>
             <div className="header-card">
@@ -14,9 +24,14 @@ export default function Header () {
                 alt="SteamLogo"
               />
             </h1>
-            <Link to="/login">
+            {user && authenticated ? <>
+                <Link to="/">
+                <button onClick={()=>Logout()} className="logout-button">Logout</button>
+              </Link>
+
+        </> :  <><Link to="/login">
           <button className="login-button">Login</button>
-        </Link>
+        </Link></>}
             </div>
             </div>
         <div className="header-title">
