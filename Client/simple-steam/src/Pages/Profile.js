@@ -1,11 +1,12 @@
-import { useAuth, withAuth } from 'your-authentication-library';
+import { UpdateProfile } from '../services/Auth';
+import { useState } from 'react'
 
 export default function Profile() {
   const { user, updateUserProfile } = useAuth();
 
-  const [editingUsername, setEditingUsername] = useState(false);
-  const [editingPassword, setEditingPassword] = useState(false);
-  const [editingEmail, setEditingEmail] = useState(false);
+  const [editUsername, setEditUsername] = useState(false);
+  const [editPassword, setEditPassword] = useState(false);
+  const [editEmail, setEditEmail] = useState(false);
 
   const handleUpdateUsername = (newUsername) => {
     updateUserProfile({ displayName: newUsername })
@@ -22,7 +23,7 @@ export default function Profile() {
       // Call the middleware function before calling the updateUserProfile function
       const updatedEmail = await middlewareFunction(newEmail);
       updateUserProfile({ email: updatedEmail });
-      setEditingEmail(false);
+      setEditEmail(false);
     } catch (error) {
       console.log(error);
     }
@@ -32,33 +33,33 @@ export default function Profile() {
     <div>
       <h1>Profile Page</h1>
       <p>Username: {user.displayName}</p>
-      {editingUsername ? (
+      {editUsername ? (
         <EditUsernameForm
           username={user.displayName}
           onSubmit={handleUpdateUsername}
-          onCancel={() => setEditingUsername(false)}
+          onCancel={() => setEditUsername(false)}
         />
       ) : (
-        <button onClick={() => setEditingUsername(true)}>Edit Username</button>
+        <button onClick={() => setEditUsername(true)}>Edit Username</button>
       )}
       <p>Email: {user.email}</p>
-      {editingEmail ? (
+      {editEmail ? (
         <EditEmailForm
           email={user.email}
           onSubmit={handleUpdateEmail}
-          onCancel={() => setEditingEmail(false)}
+          onCancel={() => setEditEmail(false)}
           />
           ) : (
-          <button onClick={() => setEditingEmail(true)}>Edit Email</button>
+          <button onClick={() => setEditEmail(true)}>Edit Email</button>
           )}
           <p>Password: *****</p>
-          {editingPassword ? (
+          {editPassword ? (
           <EditPasswordForm
           onSubmit={handleUpdatePassword}
-          onCancel={() => setEditingPassword(false)}
+          onCancel={() => setEditPassword(false)}
           />
           ) : (
-          <button onClick={() => setEditingPassword(true)}>Edit Password</button>
+          <button onClick={() => setEditPassword(true)}>Edit Password</button>
           )}
           </div>
           );
