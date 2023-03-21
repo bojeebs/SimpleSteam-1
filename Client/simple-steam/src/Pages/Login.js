@@ -1,6 +1,7 @@
- import { useState } from 'react'
+ import { useState, useContext } from 'react'
  import { LoginUser } from '../services/Auth'
  import { useNavigate } from 'react-router-dom'
+ import { Data } from "../Data";
 
 
  import {Link} from 'react-router-dom'
@@ -10,24 +11,25 @@
 
 const Login = (props) => {
     let navigate = useNavigate()
+    const { info, setInfo } = useContext(Data)
   
-    const [formValues, setFormValues] = useState({ userName: '', password: '' })
+    const [formValues, setFormValues] = useState({ username: '', password: '' })
   
     const handleChange = (e) => {
-      setFormValues({ ...formValues, [e.target.userName]: e.target.value })
+      setFormValues({ ...formValues, [e.target.name]: e.target.value })
     }
   
     const handleSubmit = async (e) => {
       e.preventDefault()
        const payload = await LoginUser(formValues)
-    
-      setFormValues({ userName: '', password: '' })
+       setInfo({...info, username: formValues.username, password: formValues.password})
+      setFormValues({ username: '', password: '' })
      
        props.setUser(payload)
 
        props.toggleAuthenticated(true)
       
-      navigate('/Home')
+      navigate('/')
     }
   
     return (
@@ -41,7 +43,7 @@ const Login = (props) => {
         <div className="card-overlay centered">
           <form className="col" onSubmit={handleSubmit}>
             <div className="input-wrapper">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">username</label>
               <input
                 onChange={handleChange}
                 name="username"
@@ -61,7 +63,7 @@ const Login = (props) => {
                 required
               />
             </div>
-            <button disabled={!formValues.userName|| !formValues.password}>
+            <button disabled={formValues.username === '' || !formValues.password === ''}>
               Sign In
             </button>
             <footer>
@@ -86,22 +88,22 @@ const Login = (props) => {
 
  
 // function App() {
-//   const [userName, setUserName] = useState('');
+//   const [username, setusername] = useState('');
 //   const [email, setEmail] = useState('');
 //   const [password, setPassword] = useState('');
 //   const [isLoggedin, setIsLoggedin] = useState(false);
  
 //   const login = (e) => {
 //     e.preventDefault();
-//     console.log(userName, email, password);
+//     console.log(username, email, password);
 //     const userData = {
-//       userName,
+//       username,
 //       password,
 //       email,
 //     };
 //     localStorage.setItem('token-info', JSON.stringify(userData));
 //     setIsLoggedin(true);
-//     setUsername('');
+//     setusername('');
 //     setPassword('');
 //     setEmail('');
 //   };
@@ -120,9 +122,9 @@ const Login = (props) => {
 //             <form action="">
 //               <input
 //                 type="text"
-//                 onChange={(e) => setUsername(e.target.value)}
+//                 onChange={(e) => setusername(e.target.value)}
 //                 value={name}
-//                 placeholder="Username"
+//                 placeholder="username"
 //               />
 //               <input
 //                 type="password"
