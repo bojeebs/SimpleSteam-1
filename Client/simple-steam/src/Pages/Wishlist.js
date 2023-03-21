@@ -22,9 +22,9 @@ const Wishlist = ({ user, authenticated }) => {
   }, [])
 
 
-  
-  
-  return (
+
+
+  return (user && authenticated && userId === localStorage.getItem('id')) ?(
     <div className="grid col-4">
       
       <h1>Test {info.username}   {info.password}</h1>
@@ -37,7 +37,7 @@ const Wishlist = ({ user, authenticated }) => {
         </div>
       ))}
     </div>
-  ) 
+  ) : null
 }
 
 

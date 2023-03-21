@@ -22,7 +22,8 @@ const Login = (props) => {
     const handleSubmit = async (e) => {
       e.preventDefault()
        const payload = await LoginUser(formValues)
-       setInfo({...info, username: formValues.username, password: formValues.password})
+       console.log(payload)
+       setInfo({...info, id: payload.id, username: payload.username, password: payload.password, createdAt: payload.createdAt , updatedAt: payload.updatedAt})
        setFormValues({ username: '', password: '' })
      
        props.setUser(payload)

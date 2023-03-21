@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 
-
 export default function Nav(){
     return (
         <div className='nav-container'>
@@ -9,7 +8,7 @@ export default function Nav(){
       <Link className='links' to="/">Home</Link>
       <Link className='links' to="/profile">Profile</Link>
       <Link className='links' to="/games">Games</Link>
-      <Link className='links' to="/wishlist">Wishlist</Link>
+      <Link className='links' to={`/wishlist/${localStorage.getItem('id')}`}>Wishlist</Link>
       <div className='search'>
       <input
         className='searchbar'  
