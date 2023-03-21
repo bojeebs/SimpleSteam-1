@@ -14,9 +14,16 @@ const GetGames = async (req, res) => {
 
   const AddGames = async (req, res) => {
     try {
+
+        let gamesBody = {
+          ...req.body
+      }
+      let user = await Wishlist.create(gamesBody)
+
         
 
       let user = await Wishlist.create({userId: req.body.userId, gamesId: req.body.gamesId})
+
       res.send(user)
       console.log(user)
      } catch (error) {

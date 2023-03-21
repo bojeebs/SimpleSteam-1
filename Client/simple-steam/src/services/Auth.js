@@ -13,6 +13,8 @@ export const LoginUser = async (data) => {
   }
 }
 
+
+
 export const RegisterUser = async (data) => {
   try {
     const res = await Client.post('/api/register', data)
