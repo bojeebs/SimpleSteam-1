@@ -4,9 +4,13 @@
  import Main from './Pages/Main';
  import Login from './Pages/Login';
  import Wishlist from './Pages/Wishlist';
+ import Games from './Pages/Games';
+ import Profile from './Pages/Profile'
+ import Register from './Pages/Register'
  import Header from './Components/Header';
  import './styles/App.css'
  import { CheckSession } from './services/Auth'
+ import { Data } from './Data';
 
 
  
@@ -15,6 +19,16 @@
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
+
+
+  const [info, setInfo] = useState({
+    id:'',
+    username:'',
+    email:'',
+    password:'',
+    createdAt:'',
+    updatedAt:''
+  })
   
 
   useEffect(() => {
@@ -31,38 +45,34 @@ function App() {
     setUser(user)
     toggleAuthenticated(true)
   }
-  const handleLogOut = () => {
-    //Reset all auth related state and clear localStorage
-    setUser(null)
-    toggleAuthenticated(false)
-    localStorage.clear()
-  }
-
-
-
-
+  // const handleLogOut = () => {
+  //   //Reset all auth related state and clear localStorage
+  //   setUser(null)
+  //   toggleAuthenticated(false)
+  //   localStorage.clear()
+  // }
 
 
   return (
     <div className="App">
+       <Data.Provider value={{info, setInfo}}>
       <Routes>
         <Route path="/"
         element={
           <div>
              <Header />
             <Main />
-            
           </div>
         }/>
         <Route
         path="/Login"
         element={
           <div>
+             <Header />
                 <Login
             setUser={setUser}
   toggleAuthenticated={toggleAuthenticated}
-          />
-            
+          />  
           </div>
         }/>
          <Route
@@ -70,7 +80,36 @@ function App() {
         element={
             <Wishlist user={user} authenticated={authenticated}/>
         }/>
+
+<Route path="/games"
+        element={
+          <div>
+             <Header />
+            <Games />
+            
+          </div>
+        }/>
+
+<Route path="/register"
+        element={
+          <div>
+             <Header />
+            <Register />
+            
+          </div>
+        }/>
+
+<Route path="/profile"
+        element={
+          <div>
+             <Header />
+            <Profile />
+            
+          </div>
+        }/>
+
       </Routes>
+      </Data.Provider>
     </div>
   );
 }
