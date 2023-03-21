@@ -64,7 +64,7 @@ function App() {
         <Route path="/"
         element={
           <div>
-             <Header />
+             <Header user={user} authenticated={authenticated}/>
             <Main />
           </div>
         }/>
@@ -72,7 +72,7 @@ function App() {
         path="/Login"
         element={
           <div>
-             <Header />
+             <Header user={user} authenticated={authenticated}/>
                 <Login
             setUser={setUser}
   toggleAuthenticated={toggleAuthenticated}
@@ -81,14 +81,18 @@ function App() {
         }/>
          <Route
         path="/wishlist/:userId"
-        element={
+        element={<div>
+
+      
+          <Header user={user} authenticated={authenticated}/>
             <Wishlist user={user} authenticated={authenticated}/>
+            </div>
         }/>
 
 <Route path="/games"
         element={
           <div>
-             <Header />
+             <Header user={user} authenticated={authenticated}/>
             <Games user={user} authenticated={authenticated}/>
             
           </div>
@@ -97,7 +101,7 @@ function App() {
 <Route path="/register"
         element={
           <div>
-             <Header />
+             <Header user={user} authenticated={authenticated}/>
             <Register />
             
           </div>

@@ -70,6 +70,18 @@ padding: .5%;
 width: 8%;
 cursor: pointer;
 }
+.logout-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 1;
+  border-radius: 100px;
+  background-color: #932929;
+  color: #ff0909;
+  padding: .5%;
+  width: 8%;
+  cursor: pointer;
+  }
 
 .searchbar {
   background-color: #498BD9;
