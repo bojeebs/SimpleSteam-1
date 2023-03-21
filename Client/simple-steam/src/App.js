@@ -30,6 +30,14 @@ function App() {
     updatedAt:''
   })
   
+ 
+  const checkToken = async () => {
+    //If a token exists, sends token to localStorage to persist logged in user
+    const user = await CheckSession()
+    setUser(user)
+    toggleAuthenticated(true)
+    
+  }
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -37,14 +45,10 @@ function App() {
     if (token) {
       checkToken()
     }
+    
   }, [])
- 
-  const checkToken = async () => {
-    //If a token exists, sends token to localStorage to persist logged in user
-    const user = await CheckSession()
-    setUser(user)
-    toggleAuthenticated(true)
-  }
+  console.log(localStorage.getItem('token'))
+  
   // const handleLogOut = () => {
   //   //Reset all auth related state and clear localStorage
   //   setUser(null)
@@ -85,7 +89,7 @@ function App() {
         element={
           <div>
              <Header />
-            <Games />
+            <Games user={user} authenticated={authenticated}/>
             
           </div>
         }/>
@@ -113,5 +117,12 @@ function App() {
     </div>
   );
 }
+
+//TODO Games page + add button wishlist, wishlist and remove button, profile page + update function, 
+//TODO Search bar doesnt work, 
+
+
+
+
 
 export default App;

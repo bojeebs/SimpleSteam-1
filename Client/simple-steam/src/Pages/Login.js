@@ -23,7 +23,7 @@ const Login = (props) => {
       e.preventDefault()
        const payload = await LoginUser(formValues)
        setInfo({...info, username: formValues.username, password: formValues.password})
-      setFormValues({ username: '', password: '' })
+       setFormValues({ username: '', password: '' })
      
        props.setUser(payload)
 
