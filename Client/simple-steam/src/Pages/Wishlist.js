@@ -21,7 +21,9 @@ const Wishlist = ({ user, authenticated }) => {
     handleGames()
   }, [])
 
+  const RemoveGame = () => {
 
+  }
 
 
   return (user && authenticated && userId === localStorage.getItem('id')) ?(
@@ -32,7 +34,7 @@ const Wishlist = ({ user, authenticated }) => {
       {games.map((game) => (
         <div className="card" key={game.id}>
           <h3>{game.title}</h3>
-         
+          <button onClick={()=>RemoveGame(game.id)}>Remove</button>
             {console.log(game.title)}
         </div>
       ))}
