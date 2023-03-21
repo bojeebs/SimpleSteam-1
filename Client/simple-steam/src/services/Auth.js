@@ -31,3 +31,12 @@ export const CheckSession = async () => {
     throw error
   }
 }
+
+export const UpdateProfile = async (data) => {
+  try {
+    const res = await Client.put('/api/profile', data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

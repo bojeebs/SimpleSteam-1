@@ -118,8 +118,7 @@ function App() {
   );
 }
 
-//TODO Games page + add button wishlist, wishlist and remove button, profile page + update function, 
-//TODO Search bar doesnt work, 
+
 
 
 

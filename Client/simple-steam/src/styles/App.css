@@ -96,6 +96,38 @@ cursor: pointer;
   margin-top: 20%;
 }
 
+.games-card {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  color: white;
+  background-color: #0F313F;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  height: 80%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 1% auto;
+  width: 70%;
+  margin-bottom: 30px;
+}
+
+.add-game-button {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #58FFB1;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
 
 
 
