@@ -1,4 +1,4 @@
-import { useAuth } from 'your-authentication-library';
+import { useAuth, withAuth } from 'your-authentication-library';
 
 export default function Profile() {
   const { user, updateUserProfile } = useAuth();
@@ -17,11 +17,16 @@ export default function Profile() {
     // Send request to update password
   };
 
-  const handleUpdateEmail = (newEmail) => {
-    updateUserProfile({ email: newEmail })
-      .then(() => setEditingEmail(false))
-      .catch((error) => console.log(error));
-  };
+  const handleUpdateEmail = withAuth(async (newEmail) => {
+    try {
+      // Call the middleware function before calling the updateUserProfile function
+      const updatedEmail = await middlewareFunction(newEmail);
+      updateUserProfile({ email: updatedEmail });
+      setEditingEmail(false);
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
   return (
     <div>
@@ -57,4 +62,4 @@ export default function Profile() {
           )}
           </div>
           );
-          }
+}
