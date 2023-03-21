@@ -8,3 +8,12 @@ export const GetGames = async () => {
     throw error
   }
 }
+
+export const notloggedInGetGames = async () => {
+  try {
+    const res = await Client.get('/api/')
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

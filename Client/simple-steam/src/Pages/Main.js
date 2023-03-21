@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { GetGames } from "../services/GameServices";
+import { notloggedInGetGames } from "../services/GameServices";
 import { Data } from "../Data";
+
 
 const Main = ({ user, authenticated }) => {
   const [games, setGames] = useState([]);
@@ -11,7 +12,7 @@ const Main = ({ user, authenticated }) => {
 
   useEffect(() => {
     const handleGames = async () => {
-      const data = await GetGames();
+      const data = await notloggedInGetGames();
       setGames(data);
     };
     handleGames();

@@ -28,7 +28,7 @@ const Register = async (req, res) => {
   try {
     const { username, email, password } = req.body
     let passwordDigest = await middleware.hashPassword(password)
-    const user = await Users.create({ username, email, password: passwordDigest })
+    const user = await Users.create({ username: username, email: email, password: passwordDigest })
     res.send(user)
   } catch (error) {
     throw error
