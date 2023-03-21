@@ -19,7 +19,7 @@ const Games = ({ user, authenticated }) => {
    
   
   
-  return (
+  return (user && authenticated) ? (
     <div className="grid col-4">
       <h1>Test</h1>
       {games.map((game) => (
@@ -30,7 +30,7 @@ const Games = ({ user, authenticated }) => {
         </div>
       ))}
     </div>
-  ) 
+  ) : null
 }
 
 

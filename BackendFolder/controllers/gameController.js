@@ -10,6 +10,8 @@ const GetGames = async (req, res) => {
     }
   }
   
+  
+
   const AddGames = async (req, res) => {
     try {
         let gamesBody = {

@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-
+import { Link } from "react-router-dom";
 
 export default function Header () {
     return (
@@ -14,6 +14,9 @@ export default function Header () {
                 alt="SteamLogo"
               />
             </h1>
+            <Link to="/login">
+          <button className="login-button">Login</button>
+        </Link>
             </div>
             </div>
         <div className="header-title">
