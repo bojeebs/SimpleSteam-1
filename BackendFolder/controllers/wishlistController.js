@@ -29,7 +29,7 @@ const CreateWishlist = async (req, res) => {
       // Retrieve all the wishlist items that match the specified userId
       const wishlistItems = await Wishlist.findAll({
         where: {
-          userId: req.body.id,
+          userId: req.params.userId
         },
         raw: true,
         attributes: ['gamesId'],

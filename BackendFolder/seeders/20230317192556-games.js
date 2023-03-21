@@ -16,7 +16,19 @@ module.exports = {
         categories: 'RPG',
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
+      {
+        title: 'Runescape',
+        categories: 'MMO',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Library of Ruina',
+        categories: 'MMO',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ]
 
 

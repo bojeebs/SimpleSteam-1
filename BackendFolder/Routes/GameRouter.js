@@ -4,8 +4,8 @@ const middleware = require('../middleware/index')
 
 
 Router.get('/games', 
-    middleware.stripToken,
-    middleware.verifyToken,
+    //middleware.stripToken,
+    //middleware.verifyToken,
     GetGames 
 )
 Router.post('/gamesadd',

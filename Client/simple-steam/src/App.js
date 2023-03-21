@@ -8,7 +8,6 @@
  import Register from './Pages/Register'
  import './styles/App.css'
  import { CheckSession } from './services/Auth'
- import Games from './Pages/Games'
 
 
  
@@ -17,7 +16,7 @@
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-
+  
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -47,8 +46,9 @@ function App() {
         <Route path="/"
         element={
           <div>
+             <Header />
             <Main />
-            <Nav />
+            
           </div>
         }/>
         <Route
@@ -64,21 +64,11 @@ function App() {
           </div>
         }/>
          <Route
-        path="/wishlist"
+        path="/wishlist/:userId"
         element={
             <Wishlist user={user} authenticated={authenticated}/>
         }/>
-        <Route
-        path="/games"
-        element={
-            <Games user={user} authenticated={authenticated}/>
-        }/>
-        <Route path="/register" 
-        element={
-        <div>
-          <Header/>
-          <Register/>
-        </div>} />
+
       </Routes>
     </div>
   );
