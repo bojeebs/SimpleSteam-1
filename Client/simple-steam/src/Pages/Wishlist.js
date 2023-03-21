@@ -1,7 +1,8 @@
 //import Nav from "./Nav";
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { GetUserWishlistGames, DeleteGames } from '../services/WishlistServices'
 import { useNavigate, useParams } from 'react-router-dom'
+import { Data } from "../Data";
 
 
 const Wishlist = ({ user, authenticated }) => {
@@ -9,6 +10,7 @@ const Wishlist = ({ user, authenticated }) => {
   let navigate = useNavigate()
   const { userId } = useParams()
 
+  const { info, setInfo } = useContext(Data)
 
 
   useEffect(() => {
@@ -24,7 +26,9 @@ const Wishlist = ({ user, authenticated }) => {
   
   return (
     <div className="grid col-4">
-      <h1>Test</h1>
+      
+      <h1>Test {info.username}   {info.password}</h1>
+
       {games.map((game) => (
         <div className="card" key={game.id}>
           <h3>{game.title}</h3>

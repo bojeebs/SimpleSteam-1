@@ -4,10 +4,13 @@ const middleware = require('../middleware/index')
 
 
 Router.get('/games', 
-    //middleware.stripToken,
-    //middleware.verifyToken,
+    middleware.stripToken,
+    middleware.verifyToken,
     GetGames 
 )
+
+Router.get('/', GetGames)
+
 Router.post('/gamesadd',
     middleware.stripToken,
     middleware.verifyToken,

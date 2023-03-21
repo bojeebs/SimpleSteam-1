@@ -7,13 +7,13 @@ const Register = () => {
   let navigate = useNavigate()
   const [formValues, setFormValues] = useState({
     email: '',
-    userName: '',
+    username: '',
     password: '',
     confirmPassword: ''
   })
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.userName]: e.target.value })
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
   
@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault()
     await RegisterUser({
       email: formValues.email,
-      userName: formValues.userName,
+      username: formValues.username,
       password: formValues.password
     })
 
@@ -51,13 +51,13 @@ const Register = () => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="username">Userame</label>
+            <label htmlFor="username">Username</label>
             <input
               onChange={handleChange}
-              userName="username"
+              name="username"
               type="text"
               placeholder="Username"
-              value={formValues.userName}
+              value={formValues.username}
               required
             />
           </div>
