@@ -60,6 +60,7 @@ const stripToken = (req, res, next) => {
     try {
       const payload = jwt.verify(token, APP_SECRET);
       res.locals.payload = payload;
+      req.userId = payload.userId;
       next();
     } catch (error) {
       res.status(401).send({ status: 'Error', msg: 'Unauthorized' });
