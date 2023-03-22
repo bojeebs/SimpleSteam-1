@@ -1,4 +1,5 @@
 const { Users, Wishlist } = require('../models')
+const { hashPassword } = require('../middleware/index');
 
 
 const GetUsers = async (req, res) => {
@@ -45,23 +46,28 @@ const GetUsers = async (req, res) => {
 //       throw error
 //     }
 //   } 
-  
- 
-
-
-
-
-
-
-
-
-
+const UpdateUserProfile = async (req, res) => {
+  try {
+    const userId = req.params.user_id;
+    const { username, email, password } = req.body;
+    let hashedPassword = await hashPassword(password);
+    await Users.update(
+      { username, email, password: hashedPassword },
+      { where: { id: userId } }
+    );
+    res.send(`User with id ${userId} has been updated.`);
+  } catch (error) {
+    throw error;
+  }
+}
 
 module.exports = {
 GetUsers,
 //CreateUser,
+UpdateUserProfile,
 //DeleteUser,
 //UpdateUser,
+
 
 
 

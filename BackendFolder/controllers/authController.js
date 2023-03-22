@@ -66,7 +66,7 @@ const CheckSession = async (req, res) => {
 
 const UpdateProfile = async (req, res) => {
   try {
-    const { id } = req.user;
+    const { userId } = req.userId;
     const { username, email, password } = req.body;
 
     // Hash the password before updating it in the database
