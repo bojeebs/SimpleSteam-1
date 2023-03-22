@@ -19,7 +19,7 @@ const GetGames = async (req, res) => {
       if (existingGame) {
         res.status(400).send('This game is already in your wishlist');
       } else {
-        console.log(existingGame)
+      
         let user = await Wishlist.create({ userId: req.body.userId, gamesId: req.body.gamesId });
         res.send(user);
       }

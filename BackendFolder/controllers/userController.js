@@ -24,16 +24,16 @@ const GetUsers = async (req, res) => {
 // }
 
 
-const DeleteUser = async(req, res) => {
-  try {
-    let ownerId = parseInt(req.params.user_id)
-    await Users.destroy({ where: { id: ownerId }, cascade: true })
-    await Wishlist.destroy({ where: { userId: ownerId } })
-    res.send(`deleted user id ${ownerId} and their wishlist`)
-  } catch (error) {
-    throw error
-  }
-}
+// const DeleteUser = async(req, res) => {
+//   try {
+//     let ownerId = parseInt(req.params.user_id)
+//     await Users.destroy({ where: { id: ownerId }, cascade: true })
+//     await Wishlist.destroy({ where: { userId: ownerId } })
+//     res.send(`deleted user id ${ownerId} and their wishlist`)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 //  const UpdateUser = async(req,res) => {
 //   try {
@@ -64,7 +64,11 @@ const UpdateUserProfile = async (req, res) => {
 module.exports = {
 GetUsers,
 //CreateUser,
-DeleteUser,
 UpdateUserProfile,
+//DeleteUser,
+//UpdateUser,
+
+
+
 
 }
