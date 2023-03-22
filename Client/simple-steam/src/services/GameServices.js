@@ -8,7 +8,7 @@ export const GetGames = async () => {
     throw error
   }
 }
-export const AddGame = async (data) => {
+export const AddGames = async (data) => {
   try {
     console.log(data)
     const res = await Client.post('/api/gamesadd', data)

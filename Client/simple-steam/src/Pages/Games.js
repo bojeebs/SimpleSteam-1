@@ -1,9 +1,13 @@
 //import Nav from "./Nav";
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { GetGames, GameId, AddGames } from "../services/GameServices";
+
+
 
 import { GetGames, GameId, AddGame } from "../services/GameServices";
 //
+
 
 
 
@@ -33,8 +37,7 @@ const Games = ({ user, authenticated }) => {
    const Game = async (gamesId) => {
     const userId = parseInt(localStorage.getItem('id'))
     const gamedata = {userId: userId, gamesId: gamesId}
-    console.log(gamedata)
-    await AddGame(gamedata)
+    await AddGames(gamedata)
    }
 
   
