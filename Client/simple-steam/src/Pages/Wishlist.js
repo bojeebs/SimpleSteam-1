@@ -1,8 +1,9 @@
 //import Nav from "./Nav";
 import { useEffect, useState, useContext } from 'react'
-import { GetUserWishlistGames, DeleteGames } from '../services/WishlistServices'
+import { GetUserWishlistGames, RemoveGames } from '../services/WishlistServices'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Data } from "../Data";
+
 
 
 const Wishlist = ({ user, authenticated }) => {
@@ -12,18 +13,25 @@ const Wishlist = ({ user, authenticated }) => {
 
   const { info, setInfo } = useContext(Data)
 
+  const handleGames = async () => {
+    const data = await GetUserWishlistGames(userId)
+    setGames(data)
+  }
 
   useEffect(() => {
-    const handleGames = async () => {
-      const data = await GetUserWishlistGames(userId)
-      setGames(data)
-    }
     handleGames()
   }, [])
 
-  const RemoveGame = () => {
+  
 
-  }
+  const RemoveGame = async (gamesId) => {
+    const userId = parseInt(localStorage.getItem('id'))
+    const gamedata = {userId: userId, gamesId: gamesId}
+    await RemoveGames(gamedata)
+    handleGames()
+   }
+
+
 
 
   return (user && authenticated && userId === localStorage.getItem('id')) ?(

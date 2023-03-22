@@ -21,7 +21,6 @@ const Main = ({ user, authenticated }) => {
   const Game = async (gamesId) => {
     const userId = parseInt(localStorage.getItem('id'))
     const gamedata = {userId: userId, gamesId: gamesId}
-    console.log(gamedata)
     await AddGames(gamedata)
    }
 
