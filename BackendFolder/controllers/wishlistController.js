@@ -5,6 +5,8 @@ const DeleteGame = async (req, res) => {
     try {
       let gamesId = req.body.gamesId
       let userId = req.body.userId
+      console.log(`gamesId: ${gamesId}`);
+      console.log(`userId: ${userId}`);
       console.log(req.body, "YOOOOOO")
       await Wishlist.destroy({ where: { gamesId: gamesId, userId: userId } })
       
