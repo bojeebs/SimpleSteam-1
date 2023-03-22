@@ -72,7 +72,7 @@ const UpdateProfile = async (req, res) => {
       {
         displayName,
         email,
-        password: passwordDigest, // Use the hashed password here
+        password: passwordDigest, //hash password
       },
       {
         where: {
