@@ -38,7 +38,8 @@ const Games = ({ user, authenticated }) => {
     const gamedata = {userId: userId, gamesId: gamesId}
     await AddGames(gamedata)
    }
-
+  
+   
   
   
   return (user && authenticated) ? (
@@ -48,7 +49,7 @@ const Games = ({ user, authenticated }) => {
         <div className="games-card" key={game.id}>
           <h3>{game.title}</h3>
 
-          <button onClick={GameId(game.id)}className='add-game-button'>Add</button>
+          
 
           <button onClick={() => Game(game.id)} className='add-game-button'>Add</button>
 
