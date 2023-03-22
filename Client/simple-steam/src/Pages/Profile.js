@@ -54,8 +54,8 @@ export default function UpdateProfile() {
   return (
     <div>
       <h2>Update Profile</h2>
-      <form onSubmit={handleUpdateUsername}>
-      {/* <form onSubmit={handleUpdateUsername} action="/api/profile" method="put"> */}
+      {/* <form onSubmit={handleUpdateUsername}> */}
+      <form onSubmit={handleUpdateUsername} action="/api/profile" method="put">
         <h3>Update Username</h3>
         <label>
           New Username:
