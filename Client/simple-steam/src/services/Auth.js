@@ -6,11 +6,14 @@ export const LoginUser = async (data) => {
     // Set the current signed in users token to localStorage
     // return user object and a JWT(token), value is always a string
     localStorage.setItem('token', res.data.token)
+    localStorage.setItem('id', res.data.user.id)
     return res.data.user
   } catch (error) {
     throw error
   }
 }
+
+
 
 export const RegisterUser = async (data) => {
   try {
