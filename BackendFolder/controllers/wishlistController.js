@@ -1,6 +1,17 @@
-const { Wishlist, Users, Games } = require('../models')
+const { Wishlist, Games } = require('../models')
 const { Op } = require('sequelize')
 
+const DeleteGame = async (req, res) => {
+    try {
+      let gamesId = req.body.gamesId
+      let userId = req.body.userId
+      console.log(req.body, "YOOOOOO")
+      await Wishlist.destroy({ where: { gamesId: gamesId, userId: userId } })
+      
+    } catch (error) {
+      throw error
+    }
+  };
 
 const CreateWishlist = async (req, res) => {
   try {
@@ -51,15 +62,22 @@ const CreateWishlist = async (req, res) => {
   }
   
 
-  const DeleteGame = async (req, res) => {
-    try {
-      let games_id = parseInt(req.params.games_id);
-      await Wishlist.destroy({ where: { gamesId: games_id } });
-      res.send(`deleted game id ${games_id}`)
-    } catch (error) {
-      throw error
-    }
-  };
+
+
+
+
+
+
+
+  // const DeleteGame = async (req, res) => {
+  //   try {
+  //     let userId = parseInt(req.body.userId)
+  //     await Wishlist.destroy({ where: { gamesId: req.body.gamesId, userId: userId } })
+      
+  //   } catch (error) {
+  //     throw error
+  //   }
+  // };
 //TODO:  search for games in game controller via search,
 //TODO: add games to wishlist in game controller Middleware
 
