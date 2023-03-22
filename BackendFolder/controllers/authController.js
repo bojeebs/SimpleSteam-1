@@ -1,6 +1,7 @@
 const { Users } = require('../models')
 const middleware = require('../Middleware/index.js')
 
+
 const Login = async (req, res) => {
   try {
     const user = await Users.findOne({
@@ -59,9 +60,39 @@ const CheckSession = async (req, res) => {
   res.send(payload)
 }
 
+const UpdateProfile = async (req, res) => {
+  try {
+    const { id } = req.user;
+    const { displayName, email, password } = req.body;
+
+    // Hash the password before updating it in the database
+    const passwordDigest = await middleware.hashPassword(password);
+
+    const updatedUser = await User.update(
+      {
+        displayName,
+        email,
+        password: passwordDigest, // Use the hashed password here
+      },
+      {
+        where: {
+          id,
+        },
+        returning: true,
+      }
+    );
+
+    res.json(updatedUser[1][0]);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
 module.exports = {
   Login,
   Register,
   UpdatePassword,
-  CheckSession
+  CheckSession,
+  UpdateProfile
 }
