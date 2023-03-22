@@ -137,11 +137,66 @@ cursor: pointer;
   text-align: center;
   color: #58FFB1;
   font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 40px;
   margin-top: 40px;
 }
 
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: #203152;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: white;
+
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #237EA5;
+}
+
+.signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-button {
+  /* display: flex; */
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 30px 65px;
+gap: 10px;
+width: 220x;
+height: 81px;
+left: 501px;
+top: 555px;
+
+background: linear-gradient(270deg, #2CFEB3 0%, rgba(61, 171, 217, 0.85) 93.29%);
+}
+
+.signin-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
 
 

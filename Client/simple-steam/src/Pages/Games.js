@@ -2,9 +2,9 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { GetGames, GameId } from "../services/GameServices";
+import { GetGames, GameId, AddGame } from "../services/GameServices";
 
-import { GetGames, AddGame } from "../services/GameServices";
+
 
 
 

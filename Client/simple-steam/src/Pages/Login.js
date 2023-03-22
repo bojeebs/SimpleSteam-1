@@ -34,11 +34,14 @@ const Login = (props) => {
     }
   
     return (
+      <div>
+            <h1 className='title'>Login</h1>
+       
+      <div className='login-wrapper'>
+        
       <div className="login-container">
           
-          <div>
-            <h1>Login</h1>
-       </div>
+          
 
       <div className="signin col">
         <div className="card-overlay centered">
@@ -64,16 +67,18 @@ const Login = (props) => {
                 required
               />
             </div>
-            <button disabled={formValues.username === '' || !formValues.password === ''}>
+            <button className='signin-button' disabled={formValues.username === '' || !formValues.password === ''}>
               Sign In
             </button>
             <footer>
-              <h4>Don't have an account? <Link to="/register">Join SimpleSteam</Link> </h4>
+              <h4>Don't have an account? <Link className='links' to="/register">Join SimpleSteam</Link> </h4>
             </footer>
           </form>
           
         </div>
         </div>
+      </div>
+      </div>
       </div>
     )
   }
