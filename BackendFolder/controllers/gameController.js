@@ -10,26 +10,36 @@ const GetGames = async (req, res) => {
     }
   }
   
-  
-
+  //const DeleteGame 
   const AddGames = async (req, res) => {
     try {
-
-        let gamesBody = {
-          ...req.body
+      const existingGame = await Wishlist.findOne({
+        where: { userId: req.body.userId, gamesId: req.body.gamesId }
+      })
+      if (existingGame) {
+        res.status(400).send('This game is already in your wishlist');
+      } else {
+        console.log(existingGame)
+        let user = await Wishlist.create({ userId: req.body.userId, gamesId: req.body.gamesId });
+        res.send(user);
       }
-      let user = await Wishlist.create(gamesBody)
+    } catch (error) {
+      throw error
+    }
+  }
+  // const AddGames = async (req, res) => {
+  //   try {
 
-        
+      
+  //     //let user = await Wishlist.create(gamesBody)
+  //   let user = await Wishlist.create({userId: req.body.userId, gamesId: req.body.gamesId})
 
-      let user = await Wishlist.create({userId: req.body.userId, gamesId: req.body.gamesId})
-
-      res.send(user)
-      console.log(user)
-     } catch (error) {
-       throw error
-     }
-  }  
+  //     res.send(user)
+  //     console.log(user)
+  //    } catch (error) {
+  //      throw error
+  //    }
+  // }  
 
   const AddGameWishlist = async (req, res) => { // fix this maybe later?
     try {
