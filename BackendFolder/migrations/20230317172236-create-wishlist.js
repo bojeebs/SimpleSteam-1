@@ -13,7 +13,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       gamesId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+
       },
       createdAt: {
         allowNull: false,
