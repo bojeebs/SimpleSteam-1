@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GetGames } from "../services/GameServices";
+import Icon from '@mui/material/Icon';
+
 
 
 const Games = ({ user, authenticated }) => {
@@ -21,16 +23,21 @@ const Games = ({ user, authenticated }) => {
   
   return (user && authenticated) ? (
     <div className="grid col-4">
-      <h1>Test</h1>
+      <h1 className='title'>Games</h1>
       {games.map((game) => (
-        <div className="card" key={game.id}>
+        <div className="games-card" key={game.id}>
           <h3>{game.title}</h3>
+          <button className='add-game-button'>Add</button>
          
             {console.log(game.title)}
         </div>
       ))}
     </div>
-  ) : null
+  ) : (
+    <div>
+  <h1> Please log in!</h1>
+    </div>
+  )
 }
 
 
