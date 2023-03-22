@@ -67,14 +67,14 @@ const CheckSession = async (req, res) => {
 const UpdateProfile = async (req, res) => {
   try {
     const { id } = req.user;
-    const { displayName, email, password } = req.body;
+    const { username, email, password } = req.body;
 
     // Hash the password before updating it in the database
     const passwordDigest = await middleware.hashPassword(password);
 
     const updatedUser = await User.update(
       {
-        displayName,
+        username,
         email,
         password: passwordDigest, //hash password
       },
