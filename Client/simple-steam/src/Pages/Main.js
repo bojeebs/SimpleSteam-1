@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { notloggedInGetGames, AddGame } from "../services/GameServices";
+import { notloggedInGetGames, AddGames } from "../services/GameServices";
 import { Data } from "../Data";
 
 
@@ -22,7 +22,7 @@ const Main = ({ user, authenticated }) => {
     const userId = parseInt(localStorage.getItem('id'))
     const gamedata = {userId: userId, gamesId: gamesId}
     console.log(gamedata)
-    await AddGame(gamedata)
+    await AddGames(gamedata)
    }
 
 
