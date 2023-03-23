@@ -76,6 +76,7 @@ const Register = () => {
             <input
               className='register-input'
               onChange={handleChange}
+              placeholder="Password"
               type="password"
               name="password"
               value={formValues.password}
@@ -87,6 +88,7 @@ const Register = () => {
             <input
               className='register-input'
               onChange={handleChange}
+              placeholder='Confirm Password'
               type="password"
               name="confirmPassword"
               value={formValues.confirmPassword}

@@ -20,3 +20,12 @@
 .form-heading {
   margin-right: 14px;
 }
+
+.update-button {
+  padding: 20px;
+  width: 400px;
+  background: linear-gradient(270deg, #2CFEB3 0%, rgba(61, 171, 217, 0.85) 93.29%);
+  font-size: 32px;
+  color: #BDFFC0;
+  border: black;
+}

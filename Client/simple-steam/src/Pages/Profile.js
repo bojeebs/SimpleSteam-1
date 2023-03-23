@@ -54,39 +54,44 @@ export default function UpdateProfile(user, authenticated) {
 
   return (
     <div>
-      <h2>Update Profile</h2>
+      <h2 className='title'>Update Profile</h2>
 
+      <div className='register-wrapper'>
+        
+      <div className="register-container">
     
 
       <form onSubmit={handleUpdateUsername} action="/api/users" method="put" >
         <h3>Update Username</h3>
-        <label>
+        <label className='user-password'>
           New Username:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+          <input className='register-input' type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
         </label>
-        <button type="submit">Update Username</button>
+        <button className='update-button' type="submit">Update Username</button>
       </form>
 
       <form onSubmit={handleUpdateEmail}>
         <h3>Update Email</h3>
-        <label>
+        <label className='user-password'>
           New Email:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <input className='register-input' type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </label>
-        <button type="submit">Update Email</button>
+        <button className='update-button' type="submit">Update Email</button>
       </form>
 
       <form onSubmit={handleUpdatePassword}>
         <h3>Update Password</h3>
-        <label>
+        <label className='user-password'>
           New Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <input className='register-input' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </label>
-        <button type="submit">Update Password</button>
+        <button className='update-button' type="submit">Update Password</button>
       </form>
 
       {successMessage && <p>{successMessage}</p>}
       {errorMessage && <p>{errorMessage}</p>}
+    </div>
+    </div>
     </div>
   );
 }
