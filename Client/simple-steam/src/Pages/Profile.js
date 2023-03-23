@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Client from '../services/api'
 
+
 export default function UpdateProfile(user, authenticated) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
