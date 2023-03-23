@@ -28,7 +28,7 @@ body {
   margin: 0 auto;
   background-color: #203152;
   width: 75%;
-  bottom: 25%
+  bottom: 25%;
 }
 
 .main-container {
@@ -45,7 +45,7 @@ body {
 .steamlogo {
   width: 10%;
   height: 10%;
-  border-radius: 40%;
+  border-radius: 50%;
 }
 
 .header-card {
@@ -138,6 +138,9 @@ cursor: pointer;
   color: #58FFB1;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 40px;
+  margin-bottom: -5%;
+  font-size: 40px;
+  margin-top: 50px;
 }
 
 .login-wrapper {
@@ -145,6 +148,7 @@ cursor: pointer;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100%;
 }
 
 .login-container {
@@ -154,8 +158,8 @@ cursor: pointer;
   align-items: center;
   width: 100%;
   max-width: 800px;
-  height: 400px;
   padding: 40px;
+  margin-bottom: 50px;
   border-radius: 10px;
   background-color: #203152;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -163,11 +167,29 @@ cursor: pointer;
 
 }
 
+.login-input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 40px;
+}
+
+.user-password {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 2%;
+  color: #2CFEB3;
+}
+
 .input-wrapper {
+  padding: 5%;
   display: flex;
+  width: 100%;
   flex-direction: column;
   margin-bottom: 20px;
-  padding: 20px;
   border-radius: 5px;
   background-color: #237EA5;
 }
@@ -176,26 +198,22 @@ cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .signin-button {
-  display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 30px 65px;
-gap: 10px;
-width: 220x;
-height: 81px;
-left: 501px;
-top: 555px;
-
-background: linear-gradient(270deg, #2CFEB3 0%, rgba(61, 171, 217, 0.85) 93.29%);
+  padding: 20px;
+  width: 400px;
+  background: linear-gradient(270deg, #2CFEB3 0%, rgba(61, 171, 217, 0.85) 93.29%);
+  font-size: 32px;
+  color: #BDFFC0;
+  border: black;
 }
 
 .signin-button:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 
 
