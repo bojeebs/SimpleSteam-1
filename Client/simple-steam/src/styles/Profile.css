@@ -1,4 +1,4 @@
-.update-container {
+ .update-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,10 +22,75 @@
 }
 
 .update-button {
-  padding: 20px;
-  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
   background: linear-gradient(270deg, #2CFEB3 0%, rgba(61, 171, 217, 0.85) 93.29%);
-  font-size: 32px;
+  font-size: 16px;
+  padding: 5px;
   color: #BDFFC0;
   border: black;
+}
+
+.update-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #58FFB1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  margin-bottom: -50px;
+  border-radius: 10px;
+  background-color: #203152;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.register-input {
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-bottom: -5px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 20px;
+  background-color: white;
+}
+
+.redirect-text {
+  color: white;
+}
+
+.input-wrapper-profile {
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: #237EA5;
 }
