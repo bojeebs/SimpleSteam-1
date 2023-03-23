@@ -50,17 +50,14 @@ const UpdateUserProfile = async (req, res) => {
   try {
     const userId = req.params.user_id;
     const { username: username, email: email, password: password } = req.body;
-    console.log(username,"annenn")
 
     if (username !== undefined) {
-      console.log(username, 'kullanici')
       await Users.update(
         { username: username },
         { where: { id: userId } }
       );
     }
     if (email !== undefined) {
-      console.log(email, 'kullanici')
       await Users.update(
         { email: email },
         { where: { id: userId } }
@@ -73,7 +70,6 @@ const UpdateUserProfile = async (req, res) => {
         { where: { id: userId } }
       );
     }
-    console.log('son')
     res.send(`User with id ${userId} has been updated.`);
   } catch (error) {
     throw error;
