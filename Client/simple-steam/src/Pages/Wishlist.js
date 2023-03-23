@@ -5,7 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { Data } from "../Data";
 
 
-
 const Wishlist = ({ user, authenticated }) => {
   const [games, setGames] = useState([])
   let navigate = useNavigate()
@@ -13,41 +12,36 @@ const Wishlist = ({ user, authenticated }) => {
 
   const { info, setInfo } = useContext(Data)
 
-  const handleGames = async () => {
-    const data = await GetUserWishlistGames(userId)
-    setGames(data)
-  }
 
   useEffect(() => {
+    const handleGames = async () => {
+      const data = await GetUserWishlistGames(userId)
+      setGames(data)
+    }
     handleGames()
   }, [])
 
-  
-
   const RemoveGame = async (gamesId) => {
     const userId = parseInt(localStorage.getItem('id'))
-    const gamedata = {userId: userId, gamesId: gamesId}
-    await RemoveGames(gamedata)
-    handleGames()
-   }
+    const gamedata = { userId: userId, gamesId: gamesId }
+    RemoveGames(gamedata)
+    setGames(games.filter((game) => game.id !== gamesId))
+  }
 
-
-
-
-  return (user && authenticated && userId === localStorage.getItem('id')) ?(
+  return (user && authenticated && userId === localStorage.getItem('id')) ? (
     <div className="grid col-4">
-      
       <h1>Test {info.username}   {info.password}</h1>
-
       {games.map((game) => (
         <div className="card" key={game.id}>
           <h3>{game.title}</h3>
-          <button onClick={()=>RemoveGame(game.id)}>Remove</button>
-            {console.log(game.title)}
+          <button onClick={() => RemoveGame(game.id)}>Remove</button>
+          {console.log(game.title)}
         </div>
       ))}
     </div>
-  ) : null
+  ) : (
+    <div>Error</div>
+  )
 }
 
 
