@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Client from '../services/api'
+import '../styles/Profile.css'
 
 export default function UpdateProfile({user, authenticated}) {
   const [username, setUsername] = useState('');
@@ -65,7 +66,7 @@ console.log(user)
   return (
     <div>
       <h2>Update Profile</h2>
-      <form onSubmit={handleUpdateUsername} action="/api/profile" method="put">
+      <form onSubmit={handleUpdateUsername} action="/api/users" method="put">
         <h3>Update Username</h3>
         <label>
           New Username:

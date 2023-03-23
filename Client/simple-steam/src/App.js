@@ -11,7 +11,7 @@
  import './styles/App.css'
  import { CheckSession } from './services/Auth'
  import { Data } from './Data';
-
+ import { fetchSteamData } from './services/GameServices';
 
  
 
@@ -19,7 +19,7 @@
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-
+  const [steamData, setSteamData] = useState(null)
 
   const [info, setInfo] = useState({
     id:'',
@@ -30,7 +30,16 @@ function App() {
     updatedAt:''
   })
   
- 
+  useEffect(() => {
+    async function getData() {
+      const data = await fetchSteamData()
+      console.log(data)
+      setSteamData(data)
+    }
+    getData()
+  }, [])
+
+
   const checkToken = async () => {
     //If a token exists, sends token to localStorage to persist logged in user
     const user = await CheckSession()
@@ -49,6 +58,9 @@ function App() {
   }, [])
   console.log(localStorage.getItem('token'))
   
+
+
+  
   // const handleLogOut = () => {
   //   //Reset all auth related state and clear localStorage
   //   setUser(null)
@@ -65,7 +77,7 @@ function App() {
         element={
           <div>
              <Header user={user} authenticated={authenticated}/>
-            <Main />
+            <Main steamData={steamData}/>
           </div>
         }/>
         <Route
@@ -93,7 +105,7 @@ function App() {
         element={
           <div>
              <Header user={user} authenticated={authenticated}/>
-            <Games user={user} authenticated={authenticated}/>
+            <Games steamData={steamData} user={user} authenticated={authenticated}/>
             
           </div>
         }/>
