@@ -47,8 +47,9 @@ const Login = (props) => {
         <div className="card-overlay centered">
           <form className="col" onSubmit={handleSubmit}>
             <div className="input-wrapper">
-              <label htmlFor="username">username</label>
+              <label className='user-password' htmlFor="username">Username</label>
               <input
+                className='login-input'
                 onChange={handleChange}
                 name="username"
                 type="username"
@@ -58,11 +59,13 @@ const Login = (props) => {
               />
             </div>
             <div className="input-wrapper">
-              <label htmlFor="password">Password</label>
+              <label className='user-password' htmlFor="password">Password</label>
               <input
+                className='login-input'
                 onChange={handleChange}
                 type="password"
                 name="password"
+                placeholder='password'z
                 value={formValues.password}
                 required
               />
@@ -71,7 +74,7 @@ const Login = (props) => {
               Sign In
             </button>
             <footer>
-              <h4>Don't have an account? <Link className='links' to="/register">Join SimpleSteam</Link> </h4>
+              <h4 className='redirect-text'>Don't have an account? <Link className='links' to="/register">Join SimpleSteam</Link> </h4>
             </footer>
           </form>
           
@@ -93,75 +96,3 @@ const Login = (props) => {
   
 
  
-// function App() {
-//   const [username, setusername] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [isLoggedin, setIsLoggedin] = useState(false);
- 
-//   const login = (e) => {
-//     e.preventDefault();
-//     console.log(username, email, password);
-//     const userData = {
-//       username,
-//       password,
-//       email,
-//     };
-//     localStorage.setItem('token-info', JSON.stringify(userData));
-//     setIsLoggedin(true);
-//     setusername('');
-//     setPassword('');
-//     setEmail('');
-//   };
- 
-//   const logout = () => {
-//     localStorage.removeItem('token-info');
-//     setIsLoggedin(false);
-//   };
- 
-//   return (
-//     <>
-//       <div style={{ textAlign: 'center' }}>
-//         <h1>This is React WebApp </h1>
-//         {!isLoggedin ? (
-//           <>
-//             <form action="">
-//               <input
-//                 type="text"
-//                 onChange={(e) => setusername(e.target.value)}
-//                 value={name}
-//                 placeholder="username"
-//               />
-//               <input
-//                 type="password"
-//                 onChange={(e) => setPassword(e.target.value)}
-//                 value={password}
-//                 placeholder="Password"
-//               />
-//               <input
-//                 type="email"
-//                 onChange={(e) => setEmail(e.target.value)}
-//                 value={email}
-//                 placeholder="Email"
-//               />
-//               <button type="submit" onClick={login}>
-//                 GO
-//               </button>
-//              <footer>
-//          <h4>Don't have an account? 
-//          <Link to="/register">Join SimpleSteam</Link> </h4>
-//            </footer>
-//             </form>
-//           </>
-//         ) : (
-//           <>
-//             <h1>User is logged in</h1>
-//             <button onClickCapture={logout}>logout user</button>
-//           </>
-//         )}
-//       </div>
-//     </>
-//   );
-// }
- 
-// export default App;

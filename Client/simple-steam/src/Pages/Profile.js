@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import Client from '../services/api'
@@ -56,7 +55,10 @@ export default function UpdateProfile(user, authenticated) {
   return (
     <div>
       <h2>Update Profile</h2>
-      <form onSubmit={handleUpdateUsername} action="/api/profile" method="put">
+
+    
+
+      <form onSubmit={handleUpdateUsername} action="/api/users" method="put" >
         <h3>Update Username</h3>
         <label>
           New Username:
@@ -93,7 +95,7 @@ export default function UpdateProfile(user, authenticated) {
 
 
 
-
+// action="/api/users" method="put"
 
 
 
