@@ -36,9 +36,11 @@ export const CheckSession = async () => {
 
 export const UpdateProfile = async (data) => {
   try {
-    const res = await Client.put('/api/profile', data)
+    const res = await Client.put('/api/users/user_id', data)
     return res.data
+   
   } catch (error) {
     throw error
   }
+
 }

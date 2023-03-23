@@ -64,39 +64,54 @@ const CheckSession = async (req, res) => {
   res.send(payload)
 }
 
-const UpdateProfile = async (req, res) => {
-  try {
-    const { userId } = req.userId;
-    const { username, email, password } = req.body;
+// const UpdateProfile = async (req, res) => {
+//   try {
+//     const { userId } = req.params.userId;
+//     const { username, email, password } = req.body;
 
-    // Hash the password before updating it in the database
-    const passwordDigest = await middleware.hashPassword(password);
+//     // Hash the password before updating it in the database
+//     const passwordDigest = await middleware.hashPassword(password);
 
-    const updatedUser = await User.update(
-      {
-        username,
-        email,
-        password: passwordDigest, //hash password
-      },
-      {
-        where: {
-          id,
-        },
-        returning: true,
-      }
-    );
+//     const updatedUser = await User.update(
+//       {
+//         username,
+//         email,
+//         password: passwordDigest, //hash password
+//       },
+//       {
+//         where: {
+//           id,
+//         },
+//         returning: true,
+//       }
+//     );
 
-    res.json(updatedUser[1][0]);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-};
+//     res.json(updatedUser[1][0]);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({ message: 'Internal server error' });
+//   }
+// };
+
+// const UpdateUserProfile = async (req, res) => {
+//   try {
+//     const userId = req.params.user_id;
+//     const { username, email, password } = req.body;
+//     let hashedPassword = await hashPassword(password);
+//     await Users.update(
+//       { username, email, password: hashedPassword },
+//       { where: { id: userId } }
+//     );
+//     res.send(`User with id ${userId} has been updated.`);
+//   } catch (error) {
+//     throw error;
+//   }
+// }
 
 module.exports = {
   Login,
   Register,
   UpdatePassword,
   CheckSession,
-  UpdateProfile
+  //UpdateUserProfile
 }

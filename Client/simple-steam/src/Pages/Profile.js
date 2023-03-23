@@ -1,33 +1,39 @@
-
+import { Data } from "../Data";
 import React, { useState } from 'react';
-import axios from 'axios';
+import Client from '../services/api'
 
-export default function UpdateProfile() {
+export default function UpdateProfile({user, authenticated}) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  
+ 
 
   const handleUpdateUsername = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await axios.put('/api/profile', {
+      const response = await Client.put(`/api/users/${user.id}`, {
         username,
       });
+      const test = response.data.msg;
+      console.log(test);
       setSuccessMessage(response.data.msg);
       setUsername('');
     } catch (error) {
       setErrorMessage(error.response.data.msg);
     }
+  
+
   };
 
   const handleUpdateEmail = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await axios.put('/api/profile', {
+      const response = await Client.put(`/api/users/${user.id}`, {
         email,
       });
       setSuccessMessage(response.data.msg);
@@ -35,20 +41,26 @@ export default function UpdateProfile() {
     } catch (error) {
       setErrorMessage(error.response.data.msg);
     }
+
+    console.log(test);
   };
+  
 
   const handleUpdatePassword = async (event) => {
     event.preventDefault();
-
+console.log(user)
     try {
-      const response = await axios.put('/api/profile', {
+      const response = await Client.put(`/api/users/${user.id}`, {
         password,
       });
       setSuccessMessage(response.data.msg);
       setPassword('');
     } catch (error) {
       setErrorMessage(error.response.data.msg);
+
+      console.log(test);
     }
+    console.log(test);
   };
 
   return (

@@ -4,7 +4,8 @@ const SALT_ROUNDS = 12
 const APP_SECRET = 'supersecretkey'
 
 const hashPassword = async (password) => {
-
+console.log(password)
+console.log(SALT_ROUNDS)
   let hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
 
   return hashedPassword
