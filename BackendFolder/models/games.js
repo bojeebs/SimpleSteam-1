@@ -17,11 +17,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Games.init({
     title: DataTypes.STRING,
-    categories: DataTypes.STRING,
-    metascore: DataTypes.INTEGER,
-    metalink: DataTypes.STRING,
-    shortdescription: DataTypes.STRING,
-    thumbnailimage: DataTypes.STRING
+    shortdescription: DataTypes.TEXT,
+    image: DataTypes.STRING,
+    video: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Games',
