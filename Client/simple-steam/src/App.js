@@ -11,6 +11,7 @@
  import './styles/App.css'
  import { CheckSession } from './services/Auth'
  import { Data } from './Data';
+ const axios = require('axios');
 
 
  
@@ -49,6 +50,15 @@ function App() {
   }, [])
   console.log(localStorage.getItem('token'))
   
+  axios.get(`http://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?key=3081A460C4F7A4F7B42CCFA9530B9A2F&format=json`)
+  .then(response => {
+    const data = response.data;
+   
+  })
+
+
+
+
   // const handleLogOut = () => {
   //   //Reset all auth related state and clear localStorage
   //   setUser(null)
