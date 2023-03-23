@@ -24,7 +24,6 @@ Router.delete('/wishlists/:userId/:gamesId',
     middleware.verifyToken,
     DeleteGame
  )
-//Router.put('/users/:user_id', UpdateUser)
 
 
 module.exports = Router
