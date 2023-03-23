@@ -36,3 +36,12 @@ export const GameId  = async () => {
     throw error
   }
 }
+
+export const fetchSteamData = async () => {
+  try {
+    const res = await Client.get('/api/steamdata')
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
