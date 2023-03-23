@@ -66,7 +66,7 @@ console.log(user)
   return (
     <div>
       <h2>Update Profile</h2>
-      <form onSubmit={handleUpdateUsername} action="/api/users" method="put">
+      <form onSubmit={handleUpdateUsername} action="/api/users" method="put" >
         <h3>Update Username</h3>
         <label>
           New Username:
@@ -103,7 +103,7 @@ console.log(user)
 
 
 
-
+// action="/api/users" method="put"
 
 
 
