@@ -1,6 +1,7 @@
 import { Data } from "../Data";
 import React, { useState } from 'react';
 import Client from '../services/api'
+import '../styles/Profile.css'
 
 export default function UpdateProfile({user, authenticated}) {
   const [username, setUsername] = useState('');
@@ -64,34 +65,33 @@ console.log(user)
   };
 
   return (
-    <div>
-      <h2>Update Profile</h2>
-      {/* <form onSubmit={handleUpdateUsername}> */}
-      <form onSubmit={handleUpdateUsername} action="/api/profile" method="put">
-        <h3>Update Username</h3>
-        <label>
-          New Username:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
-        </label>
-        <button type="submit">Update Username</button>
-      </form>
-
-      <form onSubmit={handleUpdateEmail}>
-        <h3>Update Email</h3>
-        <label>
-          New Email:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </label>
-        <button type="submit">Update Email</button>
-      </form>
-
-      <form onSubmit={handleUpdatePassword}>
-        <h3>Update Password</h3>
-        <label>
-          New Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </label>
-        <button type="submit">Update Password</button>
+      <div className="update-container">
+        <h2 className="form-heading">Update Profile</h2>
+        <form onSubmit={handleUpdateUsername} action="/api/profile" method="put">
+          <h3 className="form-titleone">Update Username</h3>
+          <label>
+            
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required className="input-field" />
+          </label>
+          <button className="update-button" type="submit">Submit</button>
+        </form>
+  
+        <form onSubmit={handleUpdateEmail}>
+          <h3 className="form-titletwo">Update Email</h3>
+          <label>
+            
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="input-field" />
+          </label>
+          <button className="update-button" type="submit">Submit</button>
+        </form>
+  
+        <form onSubmit={handleUpdatePassword}>
+          <h3 className="form-titlethree">Update Password</h3>
+          <label>
+            
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="input-field" />
+          </label>
+        <button className="update-button" type="submit">Submit</button>
       </form>
 
       {successMessage && <p>{successMessage}</p>}

@@ -1,0 +1,22 @@
+.update-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.form-titleone, .form-titlethree {
+  margin-left: 25px;
+}
+
+.form-titletwo {
+  margin-left: 40px;
+}
+
+.form-titleone, .form-titlethree, .form-titletwo, .form-heading {
+  color: #33CFA8;
+}
+
+.form-heading {
+  margin-right: 14px;
+}
