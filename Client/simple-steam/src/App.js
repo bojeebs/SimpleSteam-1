@@ -58,16 +58,6 @@ function App() {
     
   }, [])
   console.log(localStorage.getItem('token'))
-  
-
-
-  
-  // const handleLogOut = () => {
-  //   //Reset all auth related state and clear localStorage
-  //   setUser(null)
-  //   toggleAuthenticated(false)
-  //   localStorage.clear()
-  // }
 
 
   return (

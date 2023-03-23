@@ -95,8 +95,6 @@ export default function UpdateProfile(user, authenticated) {
 
 
 
-// action="/api/users" method="put"
-
 
 
 

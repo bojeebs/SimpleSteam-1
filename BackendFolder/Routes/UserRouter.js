@@ -9,21 +9,9 @@ Router.get('/users',
     middleware.verifyToken,
     GetUsers
  )
-// Router.post('/', CreateUser)
 
-// Router.delete('/:user_id',
-//     middleware.stripToken,
-//     middleware.verifyToken,
-//     DeleteUser
-//  )
 Router.put('/users/:user_id', UpdateUserProfile)
 
-//  Router.delete('/:user_id',
-//      middleware.stripToken,
-//     middleware.verifyToken,
-//     DeleteUser
-//   )
-//Router.put('/users/:usersr_id', UpdateUser)
 
 
 module.exports = Router

@@ -11,41 +11,7 @@ const GetUsers = async (req, res) => {
   }
 }
 
-//  const CreateUser = async (req, res) => {
-//   try {
-//     let userBody = {
-//       ...req.body
-//   }
-//   let user = await Users.create(userBody)
-//   res.send(user)
-//  } catch (error) {
-//    throw error
-//  }
-// }
 
-
-// const DeleteUser = async(req, res) => {
-//   try {
-//     let ownerId = parseInt(req.params.user_id)
-//     await Users.destroy({ where: { id: ownerId }, cascade: true })
-//     await Wishlist.destroy({ where: { userId: ownerId } })
-//     res.send(`deleted user id ${ownerId} and their wishlist`)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
-//  const UpdateUser = async(req,res) => {
-//   try {
-//     let ownerId = await Users.update(
-//       {...req.body },
-//       { where:{ id: req.params.user_id }, returning: true }
-//     )
-//     res.send(ownerId)
-//     } catch (error) {
-//       throw error
-//     }
-//   } 
 const UpdateUserProfile = async (req, res) => {
   try {
     const userId = req.params.user_id;
