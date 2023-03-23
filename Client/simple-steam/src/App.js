@@ -110,8 +110,8 @@ function App() {
 <Route path="/profile"
         element={
           <div>
-             <Header />
-            <Profile />
+             <Header user={user} authenticated={authenticated}/>
+            <Profile user={user} authenticated={authenticated} />
             
           </div>
         }/>

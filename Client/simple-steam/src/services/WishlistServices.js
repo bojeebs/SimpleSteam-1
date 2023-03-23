@@ -12,7 +12,7 @@ export const GetUserWishlistGames = async (userId) => {
 export const RemoveGames = async (data) => {
   try {
     console.log(data, "line14!!!!")
-    const res = await Client.post('/api/wishlists', data)
+    const res = await Client.delete(`/api/wishlists/${data.userId}/${data.gamesId}`, data)
     return res.data
   } catch (error) {
     throw error

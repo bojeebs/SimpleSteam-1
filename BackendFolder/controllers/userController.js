@@ -50,6 +50,7 @@ const UpdateUserProfile = async (req, res) => {
   try {
     const userId = req.params.user_id;
     const { username, email, password } = req.body;
+    console.log(req.body)
     let hashedPassword = await hashPassword(password);
     await Users.update(
       { username, email, password: hashedPassword },

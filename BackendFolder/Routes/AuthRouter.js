@@ -17,7 +17,7 @@ router.get(
   middleware.verifyToken,
   controller.CheckSession
 )
-router.put('/profile', requireAuth, controller.UpdateProfile);
+//router.put('/profile/:id', requireAuth, controller.UpdateProfile);
 
 
 module.exports = router
