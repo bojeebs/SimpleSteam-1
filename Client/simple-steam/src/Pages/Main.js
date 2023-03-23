@@ -25,18 +25,25 @@ const Main = ({ user, authenticated }) => {
    }
 
 
-  return (
+   return (
     <div className="main-container">
+      
       <div className="grid-games">
         {games.map((game) => (
-          <div className="card" key={game.id}>
-            <h3>{game.title}</h3>
+          <div className="game-title">
+           <h3>{game.title}</h3>
+          <div className="card" key={game.id}
+            
+            style={{ backgroundImage: `url('${game.image}')` }}
+          >
+           
             <button onClick={() => Game(game.id)}>Add</button>
+          </div>
           </div>
         ))}
         {info.username} {info.password}
       </div>
     </div>
   );
-};
+        }
 export default Main;

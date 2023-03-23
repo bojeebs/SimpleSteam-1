@@ -3,12 +3,12 @@ const axios = require('axios');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    const response = await axios.get(`https://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=STEAMKEY&format=json`);
+    const response = await axios.get(`https://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=3081A460C4F7A4F7B42CCFA9530B9A2F&format=json`);
 
     const namelist = response.data.applist.apps
     console.log(namelist[0].appid)
     let list = []
-    for(let i = 100; i< 150; i++){
+    for(let i = 100; i < 300; i++){
       const response = await axios.get(`https://store.steampowered.com/api/appdetails?appids=${namelist[i].appid}`)
       const gamelist = response.data
       console.log(gamelist[namelist[i].appid].data)
@@ -17,9 +17,10 @@ module.exports = {
         title: gamelist[namelist[i].appid].data.name,
         // categories: gamelist.genres.description,
         shortdescription: gamelist[namelist[i].appid].data.short_description,
-        thumbnailimage: gamelist[namelist[i].appid].data.header_image,
+        image: gamelist[namelist[i].appid].data.header_image,
+        //movies: gamelist[namelist[i].appid].data.movies[0].mp4["480"],
         createdAt: new Date(),
-        updatedAt: new Date() 
+        updatedAt: new Date()
       })
     }
   
