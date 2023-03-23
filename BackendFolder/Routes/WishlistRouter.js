@@ -20,8 +20,8 @@ Router.get('/wishlist/:userId',
     GetUserWishlistGames
  )
 Router.delete('/wishlists/:userId/:gamesId',
-    //middleware.stripToken,
-    //middleware.verifyToken,
+    middleware.stripToken,
+    middleware.verifyToken,
     DeleteGame
  )
 //Router.put('/users/:user_id', UpdateUser)
