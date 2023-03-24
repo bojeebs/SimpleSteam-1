@@ -65,8 +65,7 @@ export default function UpdateProfile(user, authenticated) {
           >
             <div className="input-wrapper-profile">
             <h3 className="card-title">Update Username</h3>
-            <label className="user-password">
-              New Username:
+            
               <input
                 placeholder="New Username"
                 className="register-input"
@@ -76,9 +75,9 @@ export default function UpdateProfile(user, authenticated) {
                 required
               />
               
-            </label>
-            <button className="update-button" type="submit">
-              Update Username
+            
+            <button className="update-button center" type="submit">
+              Update Username:
             </button>
             </div>
           </form>
@@ -86,8 +85,7 @@ export default function UpdateProfile(user, authenticated) {
           <form onSubmit={handleUpdateEmail}>
             <div className="input-wrapper-profile">
             <h3 className="card-title">Update Email</h3>
-            <label className="user-password">
-              New Email:
+            
               <input
                 placeholder="New Email"
                 className="register-input"
@@ -96,9 +94,9 @@ export default function UpdateProfile(user, authenticated) {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-            </label>
-            <button className="update-button" type="submit">
-              Update Email
+            
+            <button className="update-button center" type="submit">
+              Update Email:
             </button>
             </div>
           </form>
@@ -106,8 +104,7 @@ export default function UpdateProfile(user, authenticated) {
           <form onSubmit={handleUpdatePassword}>
             <div className="input-wrapper-profile">
             <h3 className="card-title">Update Password</h3>
-            <label className="user-password">
-              New Password:
+            
               <input
                 placeholder="New Password"
                 className="register-input"
@@ -116,9 +113,9 @@ export default function UpdateProfile(user, authenticated) {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-            </label>
-            <button className="update-button" type="submit">
-              Update Password
+            
+            <button className="update-button center" type="submit">
+              Update Password:
             </button>
             </div>
           </form>
@@ -132,3 +129,6 @@ export default function UpdateProfile(user, authenticated) {
 }
 
 // action="/api/users" method="put"
+
+
+
