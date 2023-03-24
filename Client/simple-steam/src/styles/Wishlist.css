@@ -1,0 +1,70 @@
+.remove-game-button {
+  border-radius: 5px;
+  background-color: green;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.remove-game-button:hover {
+  background-color: #fff;
+  color: red;
+}
+
+.remove-game-button:active {
+  background-color: white;
+  color: red;
+}
+
+.col-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 80%;
+  position: relative;
+}
+
+.card h3 {
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card img {
+  object-fit: contain;
+  max-height: 250px;
+  max-width: 100px;
+}
+
+.remove-game-button {
+  border-radius: 5px;
+  background-color: red;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
