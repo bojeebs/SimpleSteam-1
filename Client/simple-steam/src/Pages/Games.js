@@ -43,10 +43,10 @@ const Games = ({ user, authenticated }) => {
   
   
   return (user && authenticated) ? (
-    <div className="grid col-4">
+    <div className="new-game-container">
       <h1 className='title'>Games</h1>
       {games.map((game) => (
-        <div className="games-card" key={game.id}>
+        <div className="games-card-update" key={game.id}>
           <h3>{game.title}</h3>
           <img src={game.image}></img>
 

@@ -59,27 +59,31 @@ export default function Nav(){
             <Link className='links' to={`/wishlist/${localStorage.getItem('id')}`}>Wishlist</Link>
             <div className='search'>
               {/* <input className='searchbar' type='text' placeholder='Search' onKeyUp={Func} /> */}
-
               <div className="dropdown">
-
-              {/* <div className="dropdown">
-
                 <table id="Dropdown">
-                {games.map((game) => (
-                  <tr>
-                    <td>{game.title}<button onClick={() => Game(game.id)}>Add</button></td>
-                  </tr>
-                ))}
+                  {games.map((game) => (
+                    <tr key={game.id}>
+                      <td>{game.title}<button onClick={() => Game(game.id)}>Add</button></td>
+                    </tr>
+                  ))}
                 </table>
-              </div> */}
+              </div>
             </div>
           </nav>
         </div>
       );
-    }      
+    }
+    
+
+    
+    
+    
+    
+    
+      
 
 
-// const Nav = ({  user, handleLogOut }) => {
+{/* // const Nav = ({  user, handleLogOut }) => {
   
 //   if (user) {
 
@@ -113,4 +117,4 @@ export default function Nav(){
 //   )
 // }
 
-// export default Nav
+// export default Nav */}
