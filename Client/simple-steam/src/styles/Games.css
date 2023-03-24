@@ -1,15 +1,35 @@
-.games-card {
+.new-game-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
 }
 
-.games-card img {
+.games-card-update {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: #444;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    color: white;
+    height: 200px;
+    width: 1000px;
+}
+
+.games-card-update img {
+    /* flex: 0 0 200px; */
+    height: 150px;
     margin-right: 10rem;
 }
 
-.games-card h3 {
-    flex-grow: 2;
+.games-card-update h3 {
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
 }
 
 .add-game-button-two {
