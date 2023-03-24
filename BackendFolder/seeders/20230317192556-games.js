@@ -15,24 +15,12 @@ module.exports = {
       if(gamelist[namelist[i].appid].success)
         list.push({
         title: gamelist[namelist[i].appid].data.name,
-        // categories: gamelist.genres.description,
         shortdescription: gamelist[namelist[i].appid].data.short_description,
         image: gamelist[namelist[i].appid].data.header_image,
-        //movies: gamelist[namelist[i].appid].data.movies[0].mp4["480"],
         createdAt: new Date(),
         updatedAt: new Date()
       })
     }
-  
-    // const list = [...Array(50)].map((_) => ({
-    //   title: gamelist.name,
-    //   categories: gamelist.genres.description,
-    //   shortdescription: gamelist.short_description,
-    //   thumbnailimage: gamelist.header_image,
-    //   createdAt: new Date(),
-    //   updatedAt: new Date() 
-    // }))
-
 
     await queryInterface.bulkInsert('games', list)
   },

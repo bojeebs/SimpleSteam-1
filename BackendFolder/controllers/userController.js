@@ -1,4 +1,4 @@
-const { Users, Wishlist } = require('../models')
+const { Users } = require('../models')
 const { hashPassword } = require('../middleware/index');
 
 
@@ -44,12 +44,5 @@ const UpdateUserProfile = async (req, res) => {
 
 module.exports = {
 GetUsers,
-//CreateUser,
 UpdateUserProfile,
-//DeleteUser,
-//UpdateUser,
-
-
-
-
 }

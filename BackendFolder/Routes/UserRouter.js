@@ -1,7 +1,6 @@
-const { GetUsers, CreateUser, DeleteUser, UpdateUserProfile } = require ('../controllers/userController')
+const { GetUsers, UpdateUserProfile } = require ('../controllers/userController')
 const Router = require('express').Router()
 const middleware = require('../middleware/index')
-const { hashPassword } = require('../middleware/index');
 
 
 Router.get('/users',

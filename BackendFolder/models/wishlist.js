@@ -29,7 +29,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     gamesId: {
       type: DataTypes.INTEGER,
-      //unique: true,
       onDelete: 'CASCADE',
       onUpdate: 'CASCADE',
       references: {

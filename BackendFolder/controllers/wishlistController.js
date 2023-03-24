@@ -29,15 +29,6 @@ const CreateWishlist = async (req, res) => {
    }
   }
 
-  const GetWishlist = async (req, res) => {
-    try {
-      const users = await Wishlist.findAll()
-      res.send(users)
-    } catch (error) {
-      throw error
-    }
-  }
-
   const GetUserWishlistGames = async (req, res) => {
     try {
       // Retrieve all the wishlist items that match the specified userId
@@ -66,28 +57,8 @@ const CreateWishlist = async (req, res) => {
   
 
 
-
-
-
-
-
-
-  // const DeleteGame = async (req, res) => {
-  //   try {
-  //     let userId = parseInt(req.body.userId)
-  //     await Wishlist.destroy({ where: { gamesId: req.body.gamesId, userId: userId } })
-      
-  //   } catch (error) {
-  //     throw error
-  //   }
-  // };
-//TODO:  search for games in game controller via search,
-//TODO: add games to wishlist in game controller Middleware
-
-
 module.exports = {
 CreateWishlist,
-GetWishlist,
 GetUserWishlistGames,
 DeleteGame,
 
