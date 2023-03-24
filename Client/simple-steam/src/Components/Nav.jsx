@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from "react";
 import { GetGames, AddGames } from "../services/GameServices";
+
+
 export default function Nav(){
     const [games, setGames] = useState([]);
 
@@ -57,7 +59,11 @@ export default function Nav(){
             <Link className='links' to={`/wishlist/${localStorage.getItem('id')}`}>Wishlist</Link>
             <div className='search'>
               {/* <input className='searchbar' type='text' placeholder='Search' onKeyUp={Func} /> */}
+
+              <div className="dropdown">
+
               {/* <div className="dropdown">
+
                 <table id="Dropdown">
                 {games.map((game) => (
                   <tr>

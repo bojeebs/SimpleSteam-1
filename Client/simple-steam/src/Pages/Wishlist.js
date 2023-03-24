@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from 'react'
 import { GetUserWishlistGames, RemoveGames } from '../services/WishlistServices'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Data } from "../Data";
+import '../styles/Wishlist.css'
 
 
 const Wishlist = ({ user, authenticated }) => {
@@ -30,11 +31,10 @@ const Wishlist = ({ user, authenticated }) => {
 
   return (user && authenticated && userId === localStorage.getItem('id')) ? (
     <div className="grid col-4">
-      <h1>Test {info.username}   {info.password}</h1>
+      <h1> {info.username}   {info.password}</h1>
       {games.map((game) => (
-        <div className="card" key={game.id}>
-          <h3>{game.title}</h3>
-          <button onClick={() => RemoveGame(game.id)}>Remove</button>
+        <div className="card" key={game.id} style={{ backgroundImage: `url('${game.image}')` }}>
+          <button className="remove-game-button" onClick={() => RemoveGame(game.id)}>Remove</button>
           {console.log(game.title)}
         </div>
       ))}
