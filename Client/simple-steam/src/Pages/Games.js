@@ -48,10 +48,12 @@ const Games = ({ user, authenticated }) => {
       {games.map((game) => (
         <div className="games-card" key={game.id}>
           <h3>{game.title}</h3>
+          <img src={game.image}></img>
+
 
           
 
-          <button onClick={() => Game(game.id)} className='add-game-button'>Add</button>
+          <button onClick={() => Game(game.id)} className='add-game-button-two'>Add</button>
 
          
             {console.log(game.title)}
