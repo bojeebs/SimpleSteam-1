@@ -56,14 +56,18 @@ export default function Nav(){
             <Link className='links' to="/games">Games</Link>
             <Link className='links' to={`/wishlist/${localStorage.getItem('id')}`}>Wishlist</Link>
             <div className='search'>
+
               <input className='searchbar' type='text' placeholder='Search' onKeyUp={Func} />
+
+             
+
               <div className="dropdown">
                 <table id="Dropdown">
-                {games.map((game) => (
-                  <tr>
-                    <td>{game.title}<button onClick={() => Game(game.id)}>Add</button></td>
-                  </tr>
-                ))}
+                  {games.map((game) => (
+                    <tr key={game.id}>
+                      <td>{game.title}<button onClick={() => Game(game.id)}>Add</button></td>
+                    </tr>
+                  ))}
                 </table>
               </div>
             </div>
@@ -72,38 +76,20 @@ export default function Nav(){
       );
     }
 
-{/* const Nav = ({  user, handleLogOut }) => { */}
-  
-{/* //   if (user) { */}
-{/* 
-//       <nav>
-//         <h3>Welcome {user.email}!</h3>
-//         <Link to="/feed">Feed</Link>
-//         <Link onClick={handleLogOut} to="/">
-//           Sign Out
-//         </Link>
-//       </nav>
+
+
+
     
-//   }
 
-//   const publicOptions = (
-//     <nav>
-//       <Link to="/">Home</Link>
-//       <Link to="/profile">Profile</Link>
-//       <Link to="/games">Games</Link>
-//       <Link to="/wishlist">Wishlist</Link>
-//     </nav>
-//   )
+    
+    
+    
+    
+    
+      
 
-//   return (
-//     <header>
-//       <Link to="/">
-//         <div className="logo-wrapper" alt="logo">
-       
-//         </div>
-//       </Link>
-//     </header>
-//   )
-// } */}
+
+
+
 
 
