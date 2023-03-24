@@ -11,6 +11,7 @@
  import './styles/App.css'
  import './styles/Register.css'
  import './styles/Profile.css'
+ import './styles/Games.css'
  import { CheckSession } from './services/Auth'
  import { Data } from './Data';
  import { fetchSteamData } from './services/GameServices';
