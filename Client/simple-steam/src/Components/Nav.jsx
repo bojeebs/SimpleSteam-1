@@ -56,11 +56,7 @@ export default function Nav(){
             <Link className='links' to="/games">Games</Link>
             <Link className='links' to={`/wishlist/${localStorage.getItem('id')}`}>Wishlist</Link>
             <div className='search'>
-
               <input className='searchbar' type='text' placeholder='Search' onKeyUp={Func} />
-
-             
-
               <div className="dropdown">
                 <table id="Dropdown">
                   {games.map((game) => (
@@ -75,21 +71,4 @@ export default function Nav(){
         </div>
       );
     }
-
-
-
-
-    
-
-    
-    
-    
-    
-    
-      
-
-
-
-
-
 
