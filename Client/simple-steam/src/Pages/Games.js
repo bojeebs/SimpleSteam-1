@@ -1,21 +1,11 @@
-//import Nav from "./Nav";
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { GetGames, GameId, AddGames } from "../services/GameServices";
-
-
-
-
-
-
-
+import { GetGames, AddGames } from "../services/GameServices";
 
 
 
 
 const Games = ({ user, authenticated }) => {
   const [games, setGames] = useState([])
-  let navigate = useNavigate()
   
   useEffect(() => {
     const handleGames = async () => {

@@ -4,14 +4,11 @@ const axios = require('axios');
 module.exports = {
   async up (queryInterface, Sequelize) {
     const response = await axios.get(`https://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=3081A460C4F7A4F7B42CCFA9530B9A2F&format=json`);
-
     const namelist = response.data.applist.apps
-    console.log(namelist[0].appid)
     let list = []
     for(let i = 100; i < 300; i++){
       const response = await axios.get(`https://store.steampowered.com/api/appdetails?appids=${namelist[i].appid}`)
       const gamelist = response.data
-      console.log(gamelist[namelist[i].appid].data)
       if(gamelist[namelist[i].appid].success)
         list.push({
         title: gamelist[namelist[i].appid].data.name,

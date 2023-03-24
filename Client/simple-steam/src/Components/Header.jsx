@@ -6,11 +6,7 @@ export default function Header ({ user, authenticated }) {
   const Logout = () => {
     localStorage.clear('id') // or localStorage.clear() 
     localStorage.clear('token')
-  }
-
-
-
- 
+  } 
 
     return (
         <div>
@@ -36,7 +32,6 @@ export default function Header ({ user, authenticated }) {
             </div>
         <div className="header-title">
         </div>
-
             <div className="nav-container">
                 <Nav />
             </div>

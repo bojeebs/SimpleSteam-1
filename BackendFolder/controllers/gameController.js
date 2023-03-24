@@ -29,7 +29,5 @@ const GetGames = async (req, res) => {
   
 module.exports = {
     GetGames,
-    AddGames,
-    // AddGameWishlist
-
+    AddGames
 }
