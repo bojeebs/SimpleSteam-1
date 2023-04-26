@@ -31,7 +31,6 @@ const Wishlist = ({ user, authenticated }) => {
 
   return (user && authenticated && userId === localStorage.getItem('id')) ? (
     <div className="grid col-4">
-      <h1> {info.username}   {info.password}</h1>
       {games.map((game) => (
         <div className="card" key={game.id} style={{ backgroundImage: `url('${game.image}')` }}>
           <button className="remove-game-button" onClick={() => RemoveGame(game.id)}>Remove</button>
