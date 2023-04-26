@@ -67,10 +67,7 @@ function App() {
        <Data.Provider value={{info, setInfo}}>
       <Routes>
         <Route path="/"
-        element={
-          <div>
-             <Header user={user} authenticated={authenticated}/>
-            <Main steamData={steamData}/>
+        element={<div><Header user={user} authenticated={authenticated}/><Main steamData={steamData}/>
           </div>
         }/>
         <Route
@@ -86,10 +83,7 @@ function App() {
         }/>
          <Route
         path="/wishlist/:userId"
-        element={<div>
-
-      
-          <Header user={user} authenticated={authenticated}/>
+        element={<div><Header user={user} authenticated={authenticated}/>
             <Wishlist user={user} authenticated={authenticated}/>
             </div>
         }/>

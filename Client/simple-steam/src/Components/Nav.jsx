@@ -20,32 +20,28 @@ export default function Nav(){
         await AddGames(gamedata)
        }
 
-      function Func(e) {
-        let  filter, a, i;
-        filter = e.target.value.toUpperCase();
-        let div = document.getElementById("Dropdown");
-        a = div.getElementsByTagName("tr");
+       function Func(e) {
+        const filter = e.target.value.toUpperCase();
+        const div = document.getElementById("Dropdown");
+        const rows = div.getElementsByTagName("tr");
         let numDisplayed = 0;
-        if (filter === "") {
-          for (i = 0; i < a.length; i++) {
-            a[i].style.display = "none";
-          }
-        } else {
-          for (i = 0; i < a.length; i++) {
-            let txtValue = a[i].textContent || a[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              if (numDisplayed < 4) {
-                a[i].style.display = "";
-                numDisplayed++;
-              } else {
-                a[i].style.display = "none";
-              }
+        
+        for (let i = 0; i < rows.length; i++) {
+          const row = rows[i];
+          const txtValue = row.textContent || row.innerText;
+          if (txtValue.toUpperCase().includes(filter)) {
+            if (numDisplayed < 4) {
+              row.style.display = "";
+              numDisplayed++;
             } else {
-              a[i].style.display = "none";
+              row.style.display = "none";
             }
+          } else {
+            row.style.display = "none";
           }
         }
       }
+      
       
       
       return (
@@ -60,7 +56,7 @@ export default function Nav(){
               <div className="dropdown">
                 <table id="Dropdown">
                   {games.map((game) => (
-                    <tr key={game.id}>
+                    <tr key={game.id} style={{ display: "none" }}>
                       <td>{game.title}<button onClick={() => Game(game.id)}>Add</button></td>
                     </tr>
                   ))}
