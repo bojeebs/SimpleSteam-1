@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const Router = require('express').Router();
 const controller = require('../controllers/authController'); // instead of exporting and importing functions one by one we just import the file completly to access all of the functions by using controller.
 const middleware = require('../middleware/index');
 const {requireAuth} = require('../middleware');
@@ -19,4 +19,4 @@ router.get(
 )
 
 
-module.exports = router
+module.exports = Router
