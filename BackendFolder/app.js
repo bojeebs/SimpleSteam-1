@@ -3,7 +3,7 @@ const cors = require('cors')
 //const logger = require('morgan') https://www.npmjs.com/package/morgan it just writes on to the console what actions are made example: POST /api/login 401 23.184 ms - 9 I didn't install this package you can install it if you want
 const app = express()
 
-const AppRouter = require('./routes/AppRouter')
+const AppRouter = require('./Routes/AppRouter')
 
 const PORT = process.env.PORT || 3001
 
