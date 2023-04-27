@@ -2,6 +2,8 @@ const { Users, Wishlist } = require('../models')
 const { hashPassword } = require('../middleware/index');
 
 
+
+
 const GetUsers = async (req, res) => {
   try {
     const users = await Users.findAll()
