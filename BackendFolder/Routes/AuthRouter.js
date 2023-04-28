@@ -3,15 +3,15 @@ const controller = require('../controllers/authController'); // instead of expor
 const middleware = require('../Middleware/index');
 const {requireAuth} = require('../Middleware');
 
-router.post('/login', controller.Login)
-router.post('/register', controller.Register)
-router.post(
+Router.post('/login', controller.Login)
+Router.post('/register', controller.Register)
+Router.post(
   '/update',
   middleware.stripToken,
   middleware.verifyToken,
   controller.UpdatePassword
 )
-router.get(
+Router.get(
   '/session',
   middleware.stripToken,
   middleware.verifyToken,
