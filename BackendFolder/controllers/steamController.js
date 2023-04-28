@@ -1,4 +1,4 @@
-const middleware = require('../middleware/index.js')
+const middleware = require('../Middleware/index.js')
 const axios = require('axios')
 
 
