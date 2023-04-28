@@ -1,5 +1,5 @@
 const { Users, Wishlist } = require('../models')
-const { hashPassword } = require('../Middleware');
+const { hashPassword } = require('../Middleware/index.js');
 
 
 
