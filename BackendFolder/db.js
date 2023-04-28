@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const connectionString = process.env.DATABASE_URL || 'postgres://tyler:Ce5jOgo3JBZyakgTD3pQybqwavwA9sEJ@dpg-ch4oabhjvhthrjkml080-a.ohio-postgres.render.com/db_simple_steam';
+const connectionString = process.env.DATABASE_URL || 'postgres://tyler:Ce5jOgo3JBZyakgTD3pQybqwavwA9sEJ@dpg-ch4oabhjvhthrjkml080-a.ohio-postgres.render.com/db_simple_steam?ssl=true';
 
 const pool = new Pool({
   connectionString: connectionString,
