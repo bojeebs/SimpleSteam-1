@@ -1,6 +1,6 @@
 const Router = require('express').Router()
 const { GetGames, AddGames, AddGameWishlist } = require ('../controllers/gameController')
-const middleware = require('../middleware/index')
+const middleware = require('../Middleware/index')
 const { getSteamData } = require ('../controllers/steamController')
 
 

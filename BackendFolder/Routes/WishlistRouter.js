@@ -1,6 +1,6 @@
 const { CreateWishlist, GetUserWishlistGames, DeleteGame} = require ('../controllers/wishlistController')
 const Router = require('express').Router()
-const middleware = require('../middleware/index')
+const middleware = require('../Middleware/index')
 
 
 // Router.get('/wishlist',
