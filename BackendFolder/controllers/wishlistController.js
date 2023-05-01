@@ -43,7 +43,7 @@ const CreateWishlist = async (req, res) => {
       // Retrieve all the wishlist items that match the specified userId
       const wishlistItems = await Wishlist.findAll({
         where: {
-          userId: req.params.userId
+          userId: parseInt(req.params.userId)
         },
         raw: true,
         attributes: ['gamesId'],
@@ -54,15 +54,16 @@ const CreateWishlist = async (req, res) => {
       const games = await Games.findAll({
         where: {
           id: { [Op.in]: gameIds },
-      },
-      raw: true
-       })
-       // Send the games as the response
+        },
+        raw: true
+      })
+      // Send the games as the response
       res.send(games)
     } catch (error) {
       throw error
     }
   }
+  
   
 
 
