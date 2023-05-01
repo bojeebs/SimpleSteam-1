@@ -2,13 +2,15 @@ const { Games, Wishlist } = require('../models')
 
 
 const GetGames = async (req, res) => {
-    try {
-      const games = await Games.findAll()
-      res.send(games)
-    } catch (error) {
-      throw error
-    }
+  try {
+    const games = await Games.findAll();
+    res.status(200).send(games);
+  } catch (error) {
+    console.error('Error fetching games:', error);
+    res.status(500).json({ status: 'Error', msg: 'Unable to fetch games' });
   }
+};
+
   
   //const DeleteGame 
   const AddGames = async (req, res) => {
