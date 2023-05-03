@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001
 
 // Set up CORS options
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://your-deployed-site.com'],
+  origin: ['http://localhost:3000', 'https://simplesteam-react.onrender.com'],
   credentials: true,
   optionsSuccessStatus: 200,
   allowedHeaders: ['Content-Type', 'Authorization']
