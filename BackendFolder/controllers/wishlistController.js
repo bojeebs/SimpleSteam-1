@@ -40,29 +40,29 @@ const CreateWishlist = async (req, res) => {
 
   const GetUserWishlistGames = async (req, res) => {
     try {
-      // Retrieve all the wishlist items that match the specified userId
       const wishlistItems = await Wishlist.findAll({
         where: {
-          userId: parseInt(req.params.userId)
+          userId: parseInt(req.params.userId),
         },
         raw: true,
-        attributes: ['gamesId'],
-      })
-      // Extract all the gameId values into an array
-      const gameIds = wishlistItems.map(item => item.gamesId)
-      // Retrieve all the matching games based on the gameId values
+        attributes: ["gamesId"],
+      });
+  
+      const gameIds = wishlistItems.map((item) => item.gamesId);
+  
       const games = await Games.findAll({
         where: {
           id: { [Op.in]: gameIds },
         },
-        raw: true
-      })
-      // Send the games as the response
-      res.send(games)
+        raw: true,
+      });
+  
+      res.send(games);
     } catch (error) {
-      throw error
+      console.error(error);
+      res.status(500).send("An error occurred while retrieving the wishlist games.");
     }
-  }
+  };
   
   
 

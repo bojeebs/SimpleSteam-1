@@ -16,19 +16,22 @@ const GetGames = async (req, res) => {
   const AddGames = async (req, res) => {
     try {
       const existingGame = await Wishlist.findOne({
-        where: { userId: req.body.userId, gamesId: req.body.gamesId }
-      })
+        where: { userId: req.body.userId, gamesId: req.body.gamesId },
+      });
       if (existingGame) {
-        res.status(400).send('This game is already in your wishlist');
+        res.status(400).send("This game is already in your wishlist");
       } else {
-      
-        let user = await Wishlist.create({ userId: req.body.userId, gamesId: req.body.gamesId });
+        let user = await Wishlist.create({
+          userId: req.body.userId,
+          gamesId: req.body.gamesId,
+        });
         res.send(user);
       }
     } catch (error) {
-      throw error
+      console.error(error);
+      res.status(500).send("An error occurred while adding the game to the wishlist.");
     }
-  }
+  };
   // const AddGames = async (req, res) => {
   //   try {
 
