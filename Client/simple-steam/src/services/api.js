@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-export const BASE_URL = 'https://simplesteam-react.onrender.com'
+export const BASE_URL = 'https://simplesteam.onrender.com'
 
 const Client = Axios.create({ baseURL: BASE_URL })
 Client.interceptors.request.use(
