@@ -25,9 +25,11 @@ const Login = async (req, res) => {
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   } catch (error) {
-    throw error
+    console.error(error); // Log the error for debugging purposes
+    res.status(500).send({ status: 'Error', msg: 'Internal server error' });
   }
 }
+
 
 const Register = async (req, res) => {
   try {
