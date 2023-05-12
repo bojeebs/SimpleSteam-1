@@ -20,7 +20,7 @@ We used figma for our wireframe to design website layout and planned association
 ![Example screenshot](./Images/flowchart.png)
 
 [Models & Associations](https://drive.google.com/file/d/1hKJR3raH_j_YbcrahY0dtTSxKKbwjMqw/view?usp=sharing)
-![Example screenshot](./Images/ERD.png)
+![Example screenshot](./Images/ERD2.png)
 
 ## Workflow 
 Our serverside code was deleveloped first in a joint collaboration effort via zoom. From there we developed the UI components independently. Alpagu took on the task of the Search/Nav Bar and wishlist. Faatimah developed the login and register components; Patrick developed the games and landing page; followed by Tyler with the Update profile, title and logged in components. 
@@ -51,13 +51,8 @@ npx create-react-app my-app
  
 ## Usage
 
-A user would go to the login page to create an account. From there, a user could choose games from any category or genre to add to their wishlist as a to buy or play later… 
+A user would go to the login page to create an account. From there, a user could choose games from any category or genre to add to their wishlist as a to buy or play later. The user can then remove any game from the wishlist but that game wont be removed from database just from a user's individual wishlist. 
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
 ## Collaborators
 
